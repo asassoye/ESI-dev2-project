@@ -67,6 +67,11 @@ public class Position {
         return Objects.hash(row, column);
     }
 
+    @Override
+    public String toString() {
+        return String.format("(%d, %d)", row, column);
+    }
+
     /**
      * Row getter
      *
