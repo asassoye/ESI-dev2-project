@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
         http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>be.sassoye.andrew</groupId>
-    <artifactId>dev2.project</artifactId>
+    <groupId>g54327</groupId>
+    <artifactId>humbug</artifactId>
 
     <version>0.1.0</version>
     <packaging>jar</packaging>
@@ -63,7 +63,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>be.sassoye.andrew.dev2.project.MainApp</mainClass>
+                            <mainClass>g54327.humbug.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
