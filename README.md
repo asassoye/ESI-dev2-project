@@ -27,6 +27,7 @@
 │           └── pbt
 │               └── humbug
 │                   └── model
+│                       ├── BoardTest.java
 │                       └── PositionTest.java
 ├── statement
 │   ├── consignes-projet.pdf
@@ -37,31 +38,30 @@
 ├── Makefile
 ├── pom.xml
 └── README.md
-
 ```
 
 ## Compiler
 ### Maven
 Pour compiler le projet, executer :
-```shell script
+```
 mvn build
 ```
 
 ## Package
 ### Maven
 Pour compiler le projet, executer :
-```shell script
+```
 mvn package
 ```
 
 Puis executez:
-```shell script
+```
 java -jar target/humbug-0.1.0.jar
 ```
 
 ## Tests
 ### Maven
 Pour executer les testes, executer la commande:
-```shell script
+```
 mvn test 
 ```
