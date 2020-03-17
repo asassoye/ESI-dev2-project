@@ -72,6 +72,10 @@ public class Position {
         return String.format("(%d, %d)", row, column);
     }
 
+    public Position next(Direction direction) {
+        return new Position(this.row + direction.getDeltaRow(), this.column + direction.getDeltaColumn());
+    }
+
     /**
      * Row getter
      *
