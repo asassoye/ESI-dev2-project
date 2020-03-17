@@ -30,13 +30,13 @@ import java.util.Scanner;
  *
  * @author Andrew SASSOYE <andrew@sassoye.be>
  */
-public class Vue {
+public class Vue implements InterfaceView {
     /**
      * Display board in console
      *
      * @param board Board to display
      */
-    public static void displayBoard(Board board) {
+    public void displayBoard(Board board) {
         String[][] stringArray = new String[board.getNbRow()][board.getNbColumn()];
 
         for (int i = 0; i < board.getNbRow(); ++i) {
