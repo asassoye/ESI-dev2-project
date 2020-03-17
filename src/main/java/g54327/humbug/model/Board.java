@@ -63,7 +63,8 @@ public class Board {
             return false;
         }
 
-        return this.squares[position.getRow()][position.getColumn()].getSquareType() == GRASS;
+        return this.squares[position.getRow()][position.getColumn()].getSquareType() == GRASS
+                || this.squares[position.getRow()][position.getColumn()].getSquareType() == STAR;
     }
 
     public SquareType getSquareType(Position position) {
