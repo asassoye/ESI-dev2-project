@@ -34,7 +34,7 @@ public class Snail extends Animal {
 
     @Override
     public String toString() {
-        return " \uD83D\uDC0C";
+        return " SN ";
     }
 
     @Override

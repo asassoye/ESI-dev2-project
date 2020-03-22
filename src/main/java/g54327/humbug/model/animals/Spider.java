@@ -33,7 +33,7 @@ public class Spider extends Animal {
 
     @Override
     public String toString() {
-        return " \uD83D\uDD77 ";
+        return " SP ";
     }
 
     @Override

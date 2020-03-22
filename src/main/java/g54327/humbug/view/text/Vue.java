@@ -80,7 +80,7 @@ public class Vue implements InterfaceView {
         System.out.printf("   ");
 
         for (var i = 0; i < board.getNbRow(); ++i) {
-            System.out.printf("%d  ", i);
+            System.out.printf(" %d  ", i);
         }
         System.out.println();
         for (var i = 0; i < board.getNbRow(); ++i) {
@@ -96,14 +96,14 @@ public class Vue implements InterfaceView {
                         printer.print(animal);
                     } else {
                         printer.setAttribute(Ansi.Attribute.HIDDEN);
-                        printer.print(" \u2205 ");
+                        printer.print(" \u2205\u2205 ");
                         printer.setAttribute(Ansi.Attribute.CLEAR);
                     }
 
                 } else {
                     ColoredPrinter printer = voidPrinter;
 
-                    printer.print(" \u2205 ");
+                    printer.print(" \u2205\u2205 ");
                 }
 
             }
