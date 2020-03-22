@@ -1,5 +1,6 @@
 package g54327.humbug.model;
 
+import g54327.humbug.model.Exceptions.AnimalDiesException;
 import g54327.humbug.model.Exceptions.LevelNotStartedException;
 import g54327.humbug.model.animals.Animal;
 import g54327.humbug.model.animals.Snail;
@@ -52,7 +53,11 @@ public class Game implements Model {
 
         for (var animal : animals) {
             if (animal.getPositionOnBoard().equals(position)) {
-                animal.move(this.board, direction, this.animals);
+                Position newPosition = animal.move(this.board, direction, this.animals);
+
+                if (newPosition == null) {
+                    throw new AnimalDiesException();
+                }
             }
         }
     }

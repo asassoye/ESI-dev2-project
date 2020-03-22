@@ -62,6 +62,11 @@ public class Vue implements InterfaceView {
         }
     }
 
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     /**
      * Display board in console
      *
@@ -69,6 +74,7 @@ public class Vue implements InterfaceView {
      * @param animals Animals on the board
      */
     public void displayBoard(Board board, Animal[] animals) {
+        clearScreen();
         System.out.println();
         System.out.printf("\t");
         System.out.printf("   ");
@@ -115,6 +121,10 @@ public class Vue implements InterfaceView {
         errorPrinter.println(message);
     }
 
+    public void displayMessage(String message) {
+        grassPrinter.println(message);
+    }
+
     /**
      * Ask position in console
      *
@@ -150,11 +160,11 @@ public class Vue implements InterfaceView {
      */
     public Direction askDirection() {
         System.out.println();
-        starPrinter.println("\tChoose the direction [N, E, S, O]\t");
+        starPrinter.println("\tChoose the direction [N, E, S, W]\t");
         Direction direction = RobustScanner
                 .askDirection(
                         "Direction:",
-                        "Error: Must be in [N, E, S, O]. Retry:",
+                        "Error: Must be in [N, E, S, W]. Retry:",
                         grassPrinter::print,
                         errorPrinter::print
                 );

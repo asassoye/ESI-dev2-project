@@ -14,4 +14,6 @@ public interface InterfaceView {
 
     void displayError(String message);
 
+    void displayMessage(String message);
+
 }

@@ -19,6 +19,12 @@
 
 package g54327.humbug;
 
+import g54327.humbug.controller.Controller;
+import g54327.humbug.model.Game;
+import g54327.humbug.model.Model;
+import g54327.humbug.view.text.InterfaceView;
+import g54327.humbug.view.text.Vue;
+
 /**
  * Main
  *
@@ -30,7 +36,12 @@ public class Main {
      *
      * @param args Execution arguments
      */
-    public static void main(String[] args) {
-        System.out.println("Coucou");
+    public static void main(String[] args) throws InterruptedException {
+        Model model = new Game();
+        InterfaceView view = new Vue();
+        Controller controller = new Controller(model, view);
+        controller.startGame();
+
+
     }
 }
