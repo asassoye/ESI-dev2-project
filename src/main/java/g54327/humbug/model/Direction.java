@@ -62,4 +62,14 @@ public enum Direction {
     public int getDeltaColumn() {
         return this.deltaColumn;
     }
+
+    public static Direction valueOfByShortName(String s) {
+        for (var direction : Direction.values()) {
+            if (direction.name().charAt(0) == s.charAt(0)) {
+                return direction;
+            }
+        }
+
+        return null;
+    }
 }
