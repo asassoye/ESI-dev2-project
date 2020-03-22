@@ -39,6 +39,7 @@ public class Board {
         this.squares = squares;
     }
 
+
     public static Board getInitialBoard() {
         Square[][] squares = {
                 {new Square(GRASS), new Square(GRASS), null},
