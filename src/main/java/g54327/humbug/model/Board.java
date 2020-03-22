@@ -19,6 +19,10 @@
 
 package g54327.humbug.model;
 
+import g54327.humbug.model.Exceptions.NullPositionException;
+import g54327.humbug.model.Exceptions.NullSquareException;
+import g54327.humbug.model.Exceptions.PositionOutOfBoundException;
+
 import static g54327.humbug.model.SquareType.GRASS;
 import static g54327.humbug.model.SquareType.STAR;
 
@@ -47,7 +51,7 @@ public class Board {
 
     public boolean isInside(Position position) {
         if (position == null) {
-            throw new IllegalArgumentException("position is not defined");
+            throw new NullPositionException("Position is not defined");
         }
 
         if (
@@ -69,7 +73,7 @@ public class Board {
 
     public SquareType getSquareType(Position position) {
         if (position == null) {
-            throw new IllegalArgumentException("position is not defined");
+            throw new NullPositionException("Position is not defined");
         }
 
         if (
@@ -78,14 +82,20 @@ public class Board {
                         || position.getRow() > this.squares.length - 1
                         || position.getColumn() > this.squares[position.getRow()].length - 1
         ) {
-            throw new IllegalArgumentException("position is out of board");
+            throw new PositionOutOfBoundException("Position is out of bound");
         }
 
         if (this.squares[position.getRow()][position.getColumn()] == null) {
-            throw new IllegalArgumentException("No Square at asked position");
+            throw new NullSquareException("No Square at asked position");
         }
 
         return this.squares[position.getRow()][position.getColumn()].getSquareType();
+    }
+
+    public Board setSquareType(Position position, SquareType squareType) {
+        this.squares[position.getRow()][position.getColumn()] = new Square(squareType);
+
+        return this;
     }
 
     public int getNbRow() {
