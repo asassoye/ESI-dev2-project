@@ -19,87 +19,154 @@
 
 package g54327.humbug.view.text;
 
+import com.diogonunes.jcdp.color.ColoredPrinter;
+import com.diogonunes.jcdp.color.api.Ansi;
 import g54327.humbug.model.Board;
 import g54327.humbug.model.Direction;
 import g54327.humbug.model.Position;
-
-import java.util.Scanner;
+import g54327.humbug.model.SquareType;
+import g54327.humbug.model.animals.Animal;
+import g54327.utils.RobustScanner;
 
 /**
  * Vue class
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.1
+ * @since 0.1.0
  */
 public class Vue implements InterfaceView {
+    private final static ColoredPrinter grassPrinter = new ColoredPrinter.Builder(0, false)
+            .foreground(Ansi.FColor.WHITE).background(Ansi.BColor.GREEN)   //setting format
+            .build();
+
+    private final static ColoredPrinter starPrinter = new ColoredPrinter.Builder(0, false)
+            .foreground(Ansi.FColor.WHITE).background(Ansi.BColor.YELLOW)   //setting format
+            .build();
+
+    private final static ColoredPrinter voidPrinter = new ColoredPrinter.Builder(0, false)
+            .foreground(Ansi.FColor.BLACK).background(Ansi.BColor.BLACK).attribute(Ansi.Attribute.HIDDEN)  //setting format
+            .build();
+
+    private final static ColoredPrinter errorPrinter = new ColoredPrinter.Builder(0, false)
+            .foreground(Ansi.FColor.WHITE).background(Ansi.BColor.RED)
+            .build();
+
+    private static ColoredPrinter getColoredPrinter(SquareType squareType) {
+        switch (squareType) {
+            case GRASS:
+                return grassPrinter;
+            case STAR:
+                return starPrinter;
+            default:
+                return voidPrinter;
+        }
+    }
+
     /**
-     * Display board in console
-     *
-     * @param board Board to display
+     * {@inheritDoc}
      */
+    @Override
     public void displayBoard(Board board) {
-        String[][] stringArray = new String[board.getNbRow()][board.getNbColumn()];
+        this.displayBoard(board, (Animal[]) null);
+    }
 
-        for (int i = 0; i < board.getNbRow(); ++i) {
-            for (int j = 0; j < board.getNbColumn(); ++j) {
+    /**
+     * {@inheritDoc}
+     */
+    public void displayBoard(Board board, Animal... animals) {
+        InterfaceView.clearScreen();
+        System.out.println();
+        System.out.printf("\t");
+        System.out.printf("   ");
+
+        for (var i = 0; i < board.getNbRow(); ++i) {
+            System.out.printf(" %d  ", i);
+        }
+        System.out.println();
+        for (var i = 0; i < board.getNbRow(); ++i) {
+            System.out.printf("\t");
+            System.out.print(i + " ");
+            for (var j = 0; j < board.getNbColumn(); ++j) {
                 Position position = new Position(i, j);
-
                 if (board.isInside(position)) {
-                    stringArray[i][j] = board.getSquareType(position).toString();
+                    Animal animal = Animal.getAnimal(animals, position);
+                    ColoredPrinter printer = getColoredPrinter(board.getSquareType(position));
+
+                    if (animal != null) {
+                        printer.print(animal);
+                    } else {
+                        printer.setAttribute(Ansi.Attribute.HIDDEN);
+                        printer.print(" \u2205\u2205 ");
+                        printer.setAttribute(Ansi.Attribute.CLEAR);
+                    }
+
+                } else {
+                    ColoredPrinter printer = voidPrinter;
+
+                    printer.print(" \u2205\u2205 ");
                 }
 
             }
+            System.out.println();
         }
-
-        for (String[] line : stringArray) {
-            for (String word : line) {
-                System.out.printf("%s ", word);
-            }
-            System.out.print("\n");
-        }
+        System.out.println();
     }
 
     /**
-     * Display an error in console
-     *
-     * @param message message to display
+     * {@inheritDoc}
      */
     public void displayError(String message) {
-        System.out.printf("[ERROR] %s\n", message);
+        errorPrinter.println(message);
     }
 
     /**
-     * Ask position in console
-     *
-     * @return Position
+     * {@inheritDoc}
+     */
+    public void displayMessage(String message) {
+        grassPrinter.println(message);
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public Position askPosition() {
-        Scanner scanner = new Scanner(System.in);
+        System.out.println();
+        starPrinter.println("\tChoose the position\t");
+        int row = RobustScanner
+                .askInt(
+                        "ROW:",
+                        "Error: Must be an int. Retry:",
+                        grassPrinter::print,
+                        errorPrinter::print
+                );
 
-        // TODO: Demander de maniere robuste
-        return new Position(scanner.nextInt(), scanner.nextInt());
+        int column = RobustScanner
+                .askInt(
+                        "COLUMN:",
+                        "Error: Must be an int. Retry:",
+                        grassPrinter::print,
+                        errorPrinter::print
+                );
+
+        System.out.println();
+        return new Position(row, column);
     }
 
     /**
-     * Ask direction in console
-     *
-     * @return Direction
+     * {@inheritDoc}
      */
     public Direction askDirection() {
-        Scanner scanner = new Scanner(System.in);
+        System.out.println();
+        starPrinter.println("\tChoose the direction [N, E, S, W]\t");
+        Direction direction = RobustScanner
+                .askDirection(
+                        "Direction:",
+                        "Error: Must be in [N, E, S, W]. Retry:",
+                        grassPrinter::print,
+                        errorPrinter::print
+                );
 
-        //TODO: robuste
-
-        switch (scanner.next()) {
-            case "NORTH":
-                return Direction.NORTH;
-            case "SOUTH":
-                return Direction.SOUTH;
-            case "EAST":
-                return Direction.EAST;
-            case "WEST":
-                return Direction.WEST;
-            default:
-                return null;
-        }
+        return direction;
     }
 }

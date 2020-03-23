@@ -24,7 +24,9 @@ import java.util.Objects;
 /**
  * Position class. Contains row and column of the position.
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.1.0
  */
 public class Position {
     private final int row;

@@ -23,7 +23,9 @@ package g54327.humbug.model;
  * Square on the board. A square has a type grass or star and it's all.
  * A square doesn't know where it is on the board.
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.1.0
  */
 public class Square {
     private SquareType squareType;

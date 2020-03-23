@@ -1,0 +1,82 @@
+/*
+ * Copyright (C) 2020 Andrew SASSOYE
+ *
+ * Permission is hereby granted, free of charge,
+ * to any person obtaining a copy of this software and associated documentation files (the “Software”),
+ * to deal in the Software without restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or
+ * substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+package g54327.humbug.controller;
+
+import g54327.humbug.model.Direction;
+import g54327.humbug.model.Exceptions.AnimalDiesException;
+import g54327.humbug.model.Game;
+import g54327.humbug.model.Model;
+import g54327.humbug.model.Position;
+import g54327.humbug.view.text.InterfaceView;
+
+/**
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
+public class Controller {
+    private Model game;
+
+    private InterfaceView view;
+
+    /**
+     * Controller constructor
+     *
+     * @param game Model
+     * @param view View
+     */
+    public Controller(Model game, InterfaceView view) {
+        this.game = game;
+        this.view = view;
+    }
+
+    /**
+     * Start the game
+     */
+    public void startGame() {
+        this.game = new Game();
+        this.game.startLevel(1);
+
+        while (!this.game.levelIsOver()) {
+            this.display();
+            Position position = this.view.askPosition();
+            Direction direction = this.view.askDirection();
+
+            try {
+                game.move(position, direction);
+            } catch (AnimalDiesException e) {
+                view.displayError("Animal Died. GAME OVER");
+                break;
+            }
+        }
+
+        if (this.game.levelIsOver()) {
+            this.view.displayMessage("LEVEL COMPLETED");
+        }
+
+    }
+
+    /**
+     * Display the Board
+     */
+    private void display() {
+        this.view.displayBoard(game.getBoard(), game.getAnimals());
+    }
+}

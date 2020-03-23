@@ -22,12 +22,26 @@ package g54327.humbug.model;
 /**
  * Direction enumeration. NORTH, SOUTH, EAST or WEST
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.1
+ * @since 0.1.0
  */
 public enum Direction {
+    /**
+     * NORTH DIRECTION
+     */
     NORTH(-1, 0),
+    /**
+     * SOUTH DIRECTION
+     */
     SOUTH(1, 0),
+    /**
+     * EAST DIRECTION
+     */
     EAST(0, 1),
+    /**
+     * WEST DIRECTION
+     */
     WEST(0, -1);
 
     private int deltaRow;
@@ -61,5 +75,22 @@ public enum Direction {
      */
     public int getDeltaColumn() {
         return this.deltaColumn;
+    }
+
+    /**
+     * get Direction by short name (N, W, E, S)
+     *
+     * @param s String [N, E, W, S]
+     * @return Direction corresponding to short name
+     * @since 1.0.1
+     */
+    public static Direction valueOfByShortName(String s) {
+        for (var direction : Direction.values()) {
+            if (direction.name().charAt(0) == s.charAt(0)) {
+                return direction;
+            }
+        }
+
+        return null;
     }
 }

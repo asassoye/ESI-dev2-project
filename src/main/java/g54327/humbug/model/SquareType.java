@@ -23,10 +23,18 @@ package g54327.humbug.model;
  * SquareType represents the type of a square on the board.
  * Square are grass or star when there represent arrival.
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.1.0
  */
 public enum SquareType {
+    /**
+     * GRASS SQUARE TYPE
+     */
     GRASS,
+    /**
+     * STAR SQUARE TYPE
+     */
     STAR
 
 }
