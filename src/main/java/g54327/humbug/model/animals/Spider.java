@@ -26,16 +26,36 @@ import g54327.humbug.model.Exceptions.PositionOutOfBoundException;
 import g54327.humbug.model.Position;
 import g54327.humbug.model.SquareType;
 
+/**
+ * Spider Class
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public class Spider extends Animal {
+    /**
+     * Spider constructor
+     *
+     * @param positionOnBoard initial position on Board
+     */
     public Spider(Position positionOnBoard) {
         super(positionOnBoard);
     }
 
+    /**
+     * toString of Spider for Vue
+     *
+     * @return " SP "
+     */
     @Override
     public String toString() {
         return " SP ";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
         Position nextPosition = positionOnBoard.next(direction);

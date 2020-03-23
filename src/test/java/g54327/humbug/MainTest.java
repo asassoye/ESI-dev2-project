@@ -22,7 +22,9 @@ package g54327.humbug;
 /**
  * Main Tests
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.1.0
  */
 class MainTest {
 

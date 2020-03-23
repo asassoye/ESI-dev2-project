@@ -24,9 +24,26 @@ import g54327.humbug.model.Direction;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
+/**
+ * RobustScanner
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public final class RobustScanner {
     private static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Ask int (robust)
+     *
+     * @param preMessage    Message to display before asking
+     * @param errorMessage  Message to display when error
+     * @param preConsumer   Lambda to display preMessage and stuff
+     * @param errorConsumer Lambda to display error and stuff
+     *
+     * @return asked int
+     */
     public static int askInt(String preMessage, String errorMessage, Consumer<String> preConsumer, Consumer<String> errorConsumer) {
         preConsumer.accept(preMessage);
         System.out.print("\t");
@@ -39,6 +56,16 @@ public final class RobustScanner {
         return scanner.nextInt();
     }
 
+    /**
+     * Ask Direction (robust) (N, S, W, E)
+     *
+     * @param preMessage    Message to display before asking
+     * @param errorMessage  Message to display when error
+     * @param preConsumer   Lambda to display preMessage and stuff
+     * @param errorConsumer Lambda to display error and stuff
+     *
+     * @return asked Direction
+     */
     public static Direction askDirection(String preMessage, String errorMessage, Consumer<String> preConsumer, Consumer<String> errorConsumer) {
         preConsumer.accept(preMessage);
         System.out.print("\t");

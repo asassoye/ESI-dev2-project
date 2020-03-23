@@ -13,7 +13,7 @@ import static g54327.humbug.model.SquareType.STAR;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @author Pierre Bettens (pbt) <pbettens@he2b.be>
+ * @author Pierre Bettens (pbt)
  */
 public class BoardTest {
 

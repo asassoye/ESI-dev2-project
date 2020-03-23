@@ -24,15 +24,63 @@ import g54327.humbug.model.Direction;
 import g54327.humbug.model.Position;
 import g54327.humbug.model.animals.Animal;
 
+/**
+ * @author Andrew SASSOYE
+ * @version 1.0.1
+ * @since 0.1.0
+ */
 public interface InterfaceView {
-    void displayBoard(Board board, Animal[] animals);
+    /**
+     * Clean console screen
+     */
+    static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 
+    /**
+     * Display board in console
+     *
+     * @param board Board to display
+     * @deprecated
+     */
+    void displayBoard(Board board);
+
+    /**
+     * Display board in console
+     *
+     * @param board   Board to display
+     * @param animals Animals to display
+     * @since 1.0.1
+     */
+    void displayBoard(Board board, Animal... animals);
+
+    /**
+     * Ask position in console
+     *
+     * @return Position
+     */
     Position askPosition();
 
+    /**
+     * Ask direction in console
+     *
+     * @return Direction
+     */
     Direction askDirection();
 
+    /**
+     * Display an error in console
+     *
+     * @param message message to display
+     */
     void displayError(String message);
 
+    /**
+     * Display a message in console
+     *
+     * @param message message to display
+     */
     void displayMessage(String message);
 
 }

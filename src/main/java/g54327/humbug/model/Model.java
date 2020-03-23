@@ -21,14 +21,47 @@ package g54327.humbug.model;
 
 import g54327.humbug.model.animals.Animal;
 
+/**
+ * Model interface
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public interface Model {
+    /**
+     * this.board getter
+     *
+     * @return this.board
+     */
     Board getBoard();
 
+    /**
+     * this.animals getter
+     *
+     * @return this.animals
+     */
     Animal[] getAnimals();
 
+    /**
+     * Start a given level
+     *
+     * @param level Level to start
+     */
     void startLevel(int level);
 
+    /**
+     * Checks if level is over
+     *
+     * @return true if over, false if not
+     */
     boolean levelIsOver();
 
+    /**
+     * Move an animal at a given position to a given direction.
+     *
+     * @param position  Position of the Animal
+     * @param direction Direction to move the Animal
+     */
     void move(Position position, Direction direction);
 }

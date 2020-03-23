@@ -28,7 +28,8 @@ import g54327.humbug.view.text.Vue;
 /**
  * Main
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 0.2.0
  */
 public class Main {
     /**

@@ -23,15 +23,41 @@ import g54327.humbug.model.Board;
 import g54327.humbug.model.Direction;
 import g54327.humbug.model.Position;
 
+/**
+ * Animal abstract Class
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public abstract class Animal {
+
+    /**
+     * Actual position on Board
+     */
     protected Position positionOnBoard;
 
+    /**
+     * Is on star (complete)
+     */
     protected boolean onStar;
 
+    /**
+     * Animal constructor
+     *
+     * @param positionOnBoard Postion of Animal on the Board
+     */
     public Animal(Position positionOnBoard) {
         this.positionOnBoard = positionOnBoard;
     }
 
+    /**
+     * Static method to find animal in array on position
+     *
+     * @param animals  Animal array
+     * @param position position to find Animal in
+     * @return Animal if the animal is found, null if no animal found
+     */
     public static Animal getAnimal(Animal[] animals, Position position) {
         for (var animal : animals) {
             if (animal.positionOnBoard.equals(position)) {
@@ -42,20 +68,48 @@ public abstract class Animal {
         return null;
     }
 
+    /**
+     * Move animal in given direction
+     *
+     * @param board     Board
+     * @param direction Direction of movement
+     * @param animals   Animal array
+     * @return Position of moved animal, null if fallen
+     */
     public abstract Position move(Board board, Direction direction, Animal[] animals);
 
+    /**
+     * this.positionOnBoard getter
+     *
+     * @return this.positionOnBoard
+     */
     public Position getPositionOnBoard() {
         return positionOnBoard;
     }
 
+    /**
+     * this.positionOnBoard setter
+     *
+     * @param positionOnBoard new Position to set
+     */
     public void setPositionOnBoard(Position positionOnBoard) {
         this.positionOnBoard = positionOnBoard;
     }
 
+    /**
+     * this.onStar getter
+     *
+     * @return true if on star, false if not
+     */
     public boolean isOnStar() {
         return onStar;
     }
 
+    /**
+     * this.onStar setter
+     *
+     * @param onStar new boolean value of this.onStar
+     */
     public void setOnStar(boolean onStar) {
         this.onStar = onStar;
     }

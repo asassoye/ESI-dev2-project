@@ -26,17 +26,36 @@ import g54327.humbug.model.Exceptions.PositionOutOfBoundException;
 import g54327.humbug.model.Position;
 import g54327.humbug.model.SquareType;
 
+/**
+ * Snail Class
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public class Snail extends Animal {
-
+    /**
+     * Snail constructor
+     *
+     * @param positionOnBoard initial position on Board
+     */
     public Snail(Position positionOnBoard) {
         super(positionOnBoard);
     }
 
+    /**
+     * Snail toString for Vue
+     *
+     * @return " SN "
+     */
     @Override
     public String toString() {
         return " SN ";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
         Position nextPosition = positionOnBoard.next(direction);

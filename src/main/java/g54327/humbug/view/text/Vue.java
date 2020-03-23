@@ -31,10 +31,11 @@ import g54327.utils.RobustScanner;
 /**
  * Vue class
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.1
+ * @since 0.1.0
  */
 public class Vue implements InterfaceView {
-
     private final static ColoredPrinter grassPrinter = new ColoredPrinter.Builder(0, false)
             .foreground(Ansi.FColor.WHITE).background(Ansi.BColor.GREEN)   //setting format
             .build();
@@ -62,19 +63,19 @@ public class Vue implements InterfaceView {
         }
     }
 
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void displayBoard(Board board) {
+        this.displayBoard(board, (Animal[]) null);
     }
 
     /**
-     * Display board in console
-     *
-     * @param board   Board to display
-     * @param animals Animals on the board
+     * {@inheritDoc}
      */
-    public void displayBoard(Board board, Animal[] animals) {
-        clearScreen();
+    public void displayBoard(Board board, Animal... animals) {
+        InterfaceView.clearScreen();
         System.out.println();
         System.out.printf("\t");
         System.out.printf("   ");
@@ -113,22 +114,21 @@ public class Vue implements InterfaceView {
     }
 
     /**
-     * Display an error in console
-     *
-     * @param message message to display
+     * {@inheritDoc}
      */
     public void displayError(String message) {
         errorPrinter.println(message);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void displayMessage(String message) {
         grassPrinter.println(message);
     }
 
     /**
-     * Ask position in console
-     *
-     * @return Position
+     * {@inheritDoc}
      */
     public Position askPosition() {
         System.out.println();
@@ -154,9 +154,7 @@ public class Vue implements InterfaceView {
     }
 
     /**
-     * Ask direction in console
-     *
-     * @return Direction
+     * {@inheritDoc}
      */
     public Direction askDirection() {
         System.out.println();

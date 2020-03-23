@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * @author Pierre Bettens (pbt) <pbettens@he2b.be>
+ * @author Pierre Bettens (pbt)
  */
 public class SnailTest {
 

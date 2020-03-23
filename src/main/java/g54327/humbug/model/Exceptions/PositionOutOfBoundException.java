@@ -19,6 +19,13 @@
 
 package g54327.humbug.model.Exceptions;
 
+/**
+ * PositionOutOfBound IllegalArgumentException
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public class PositionOutOfBoundException extends IllegalArgumentException {
     public PositionOutOfBoundException() {
     }

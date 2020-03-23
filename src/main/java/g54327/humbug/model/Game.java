@@ -24,21 +24,37 @@ import g54327.humbug.model.Exceptions.LevelNotStartedException;
 import g54327.humbug.model.animals.Animal;
 import g54327.humbug.model.animals.Snail;
 
+/**
+ * Game class
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public class Game implements Model {
     private Board board;
 
     private Animal[] animals;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Board getBoard() {
         return this.board;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Animal[] getAnimals() {
         return this.animals;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void startLevel(int level) {
         switch (level) {
@@ -50,6 +66,9 @@ public class Game implements Model {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean levelIsOver() {
         if (this.board == null || this.animals == null) {
@@ -64,6 +83,9 @@ public class Game implements Model {
         return true;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void move(Position position, Direction direction) {
         if (this.board == null || this.animals == null) {

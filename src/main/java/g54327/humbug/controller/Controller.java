@@ -26,16 +26,30 @@ import g54327.humbug.model.Model;
 import g54327.humbug.model.Position;
 import g54327.humbug.view.text.InterfaceView;
 
+/**
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.2.0
+ */
 public class Controller {
     private Model game;
 
     private InterfaceView view;
 
+    /**
+     * Controller constructor
+     *
+     * @param game Model
+     * @param view View
+     */
     public Controller(Model game, InterfaceView view) {
         this.game = game;
         this.view = view;
     }
 
+    /**
+     * Start the game
+     */
     public void startGame() {
         this.game = new Game();
         this.game.startLevel(1);
@@ -59,6 +73,9 @@ public class Controller {
 
     }
 
+    /**
+     * Display the Board
+     */
     private void display() {
         this.view.displayBoard(game.getBoard(), game.getAnimals());
     }

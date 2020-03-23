@@ -11,14 +11,34 @@
 │   ├── main
 │   │   └── java
 │   │       └── g54327
-│   │           └── humbug
-│   │               ├── model
-│   │               │   ├── Board.java
-│   │               │   ├── Direction.java
-│   │               │   ├── Position.java
-│   │               │   ├── Square.java
-│   │               │   └── SquareType.java
-│   │               └── Main.java
+│   │           ├── humbug
+│   │           │   ├── controller
+│   │           │   │   └── Controller.java
+│   │           │   ├── model
+│   │           │   │   ├── animals
+│   │           │   │   │   ├── Animal.java
+│   │           │   │   │   ├── Snail.java
+│   │           │   │   │   └── Spider.java
+│   │           │   │   ├── Exceptions
+│   │           │   │   │   ├── AnimalDiesException.java
+│   │           │   │   │   ├── LevelNotStartedException.java
+│   │           │   │   │   ├── NullPositionException.java
+│   │           │   │   │   ├── NullSquareException.java
+│   │           │   │   │   └── PositionOutOfBoundException.java
+│   │           │   │   ├── Board.java
+│   │           │   │   ├── Direction.java
+│   │           │   │   ├── Game.java
+│   │           │   │   ├── Model.java
+│   │           │   │   ├── Position.java
+│   │           │   │   ├── Square.java
+│   │           │   │   └── SquareType.java
+│   │           │   ├── view
+│   │           │   │   └── text
+│   │           │   │       ├── InterfaceView.java
+│   │           │   │       └── Vue.java
+│   │           │   └── Main.java
+│   │           └── utils
+│   │               └── RobustScanner.java
 │   └── test
 │       └── java
 │           ├── g54327
@@ -27,6 +47,9 @@
 │           └── pbt
 │               └── humbug
 │                   └── model
+│                       ├── animals
+│                       │   ├── SnailTest.java
+│                       │   └── SpiderTest.java
 │                       ├── BoardTest.java
 │                       └── PositionTest.java
 ├── statement
@@ -38,6 +61,7 @@
 ├── Makefile
 ├── pom.xml
 └── README.md
+
 ```
 
 ## Compiler

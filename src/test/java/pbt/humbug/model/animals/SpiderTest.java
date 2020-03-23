@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 //import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author Pierre Bettens (pbt) <pbettens@he2b.be>
+ * @author Pierre Bettens (pbt)
  */
 public class SpiderTest {
 

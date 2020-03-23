@@ -29,17 +29,27 @@ import static g54327.humbug.model.SquareType.STAR;
 /**
  * Board class
  *
- * @author Andrew SASSOYE <andrew@sassoye.be>
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 0.1.0
  */
 public class Board {
-
     private Square[][] squares;
 
+    /**
+     * Board constructor
+     *
+     * @param squares Squares in Board
+     */
     public Board(Square[][] squares) {
         this.squares = squares;
     }
 
-
+    /**
+     * Static method to get initial Board
+     *
+     * @return initial Board
+     */
     public static Board getInitialBoard() {
         Square[][] squares = {
                 {new Square(GRASS), new Square(GRASS), null},
@@ -50,6 +60,12 @@ public class Board {
         return board;
     }
 
+    /**
+     * Verify if a Square is present at given position
+     *
+     * @param position Position to verify
+     * @return true if present, false if not
+     */
     public boolean isInside(Position position) {
         if (position == null) {
             throw new NullPositionException("Position is not defined");
@@ -72,6 +88,12 @@ public class Board {
                 || this.squares[position.getRow()][position.getColumn()].getSquareType() == STAR;
     }
 
+    /**
+     * get a SquareType at a given position
+     *
+     * @param position Position to get SquareType
+     * @return SquareType at position
+     */
     public SquareType getSquareType(Position position) {
         if (position == null) {
             throw new NullPositionException("Position is not defined");
@@ -93,16 +115,33 @@ public class Board {
         return this.squares[position.getRow()][position.getColumn()].getSquareType();
     }
 
+    /**
+     * Set the SquareType at a given position
+     *
+     * @param position   Position to modify SquareType
+     * @param squareType new SquareType
+     * @return Board
+     */
     public Board setSquareType(Position position, SquareType squareType) {
         this.squares[position.getRow()][position.getColumn()] = new Square(squareType);
 
         return this;
     }
 
+    /**
+     * this.nbRow getter
+     *
+     * @return this.nbRow
+     */
     public int getNbRow() {
         return squares.length;
     }
 
+    /**
+     * this.nbColumn getter
+     *
+     * @return this.nbColumn
+     */
     public int getNbColumn() {
         return squares[0].length;
     }
