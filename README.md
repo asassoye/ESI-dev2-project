@@ -4,6 +4,8 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/asassoye/ESI-dev2-project?style=for-the-badge)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/asassoye/ESI-dev2-project/Java%20CI?style=for-the-badge)
 
+[JavaDOC](https://asassoye.github.io/ESI-dev2-project/index.html)
+
 ## Structure du projet
 ```
 .
