@@ -1,7 +1,7 @@
 package pbt.humbug.model;
 
-import g54327.humbug.model.Direction;
-import g54327.humbug.model.Position;
+import g54327.humbug.model.Structures.Direction;
+import g54327.humbug.model.Structures.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

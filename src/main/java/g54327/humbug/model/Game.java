@@ -19,10 +19,13 @@
 
 package g54327.humbug.model;
 
+import g54327.humbug.model.Animals.Animal;
+import g54327.humbug.model.Animals.Snail;
 import g54327.humbug.model.Exceptions.AnimalDiesException;
 import g54327.humbug.model.Exceptions.LevelNotStartedException;
-import g54327.humbug.model.animals.Animal;
-import g54327.humbug.model.animals.Snail;
+import g54327.humbug.model.Structures.Board;
+import g54327.humbug.model.Structures.Direction;
+import g54327.humbug.model.Structures.Position;
 
 /**
  * Game class

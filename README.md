@@ -17,7 +17,7 @@
 │   │           │   ├── controller
 │   │           │   │   └── Controller.java
 │   │           │   ├── model
-│   │           │   │   ├── animals
+│   │           │   │   ├── Animals
 │   │           │   │   │   ├── Animal.java
 │   │           │   │   │   ├── Snail.java
 │   │           │   │   │   └── Spider.java
@@ -27,17 +27,19 @@
 │   │           │   │   │   ├── NullPositionException.java
 │   │           │   │   │   ├── NullSquareException.java
 │   │           │   │   │   └── PositionOutOfBoundException.java
-│   │           │   │   ├── Board.java
-│   │           │   │   ├── Direction.java
+│   │           │   │   ├── Squares
+│   │           │   │   │   ├── Square.java
+│   │           │   │   │   └── SquareType.java
+│   │           │   │   ├── Structures
+│   │           │   │   │   ├── Board.java
+│   │           │   │   │   ├── Direction.java
+│   │           │   │   │   └── Position.java
 │   │           │   │   ├── Game.java
-│   │           │   │   ├── Model.java
-│   │           │   │   ├── Position.java
-│   │           │   │   ├── Square.java
-│   │           │   │   └── SquareType.java
+│   │           │   │   └── Model.java
 │   │           │   ├── view
 │   │           │   │   └── text
 │   │           │   │       ├── InterfaceView.java
-│   │           │   │       └── Vue.java
+│   │           │   │       └── View.java
 │   │           │   └── Main.java
 │   │           └── utils
 │   │               └── RobustScanner.java
@@ -63,7 +65,6 @@
 ├── Makefile
 ├── pom.xml
 └── README.md
-
 ```
 
 ## Compiler

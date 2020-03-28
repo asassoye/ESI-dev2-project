@@ -17,63 +17,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model;
+package g54327.humbug.model.Squares;
 
 /**
- * Direction enumeration. NORTH, SOUTH, EAST or WEST
+ * Square on the board. A square has a type grass or star and it's all.
+ * A square doesn't know where it is on the board.
  *
  * @author Andrew SASSOYE
- * @version 1.0.1
+ * @version 1.0.0
  * @since 0.1.0
  */
-public enum Direction {
-    /**
-     * NORTH DIRECTION
-     */
-    NORTH(-1, 0),
-    /**
-     * SOUTH DIRECTION
-     */
-    SOUTH(1, 0),
-    /**
-     * EAST DIRECTION
-     */
-    EAST(0, 1),
-    /**
-     * WEST DIRECTION
-     */
-    WEST(0, -1);
-
-    private int deltaRow;
-
-    private int deltaColumn;
+public class Square {
+    private SquareType squareType;
 
     /**
-     * Constructor
+     * Constructor of Square on board.
      *
-     * @param deltaRow    delta of rows
-     * @param deltaColumn delta of column
+     * @param squareType Square is grass or star
      */
-    Direction(int deltaRow, int deltaColumn) {
-        this.deltaRow = deltaRow;
-        this.deltaColumn = deltaColumn;
+    public Square(SquareType squareType) {
+        this.squareType = squareType;
     }
 
     /**
-     * DeltaRow getter
+     * Simple getter of type
      *
-     * @return this.deltaRow
+     * @return type of Square
      */
-    public int getDeltaRow() {
-        return this.deltaRow;
-    }
-
-    /**
-     * DeltaColumn getter
-     *
-     * @return this.deltaColumn
-     */
-    public int getDeltaColumn() {
-        return this.deltaColumn;
+    public SquareType getSquareType() {
+        return squareType;
     }
 }

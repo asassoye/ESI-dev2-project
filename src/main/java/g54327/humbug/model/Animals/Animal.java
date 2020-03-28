@@ -17,11 +17,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model.animals;
+package g54327.humbug.model.Animals;
 
-import g54327.humbug.model.Board;
-import g54327.humbug.model.Direction;
-import g54327.humbug.model.Position;
+import g54327.humbug.model.Structures.Board;
+import g54327.humbug.model.Structures.Direction;
+import g54327.humbug.model.Structures.Position;
 
 /**
  * Animal abstract Class

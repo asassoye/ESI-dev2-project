@@ -1,13 +1,13 @@
 typeSearchIndex = [{"l": "All Classes", "url": "allclasses-index.html"}, {
-    "p": "g54327.humbug.model.animals",
+    "p": "g54327.humbug.model.Animals",
     "l": "Animal"
 }, {"p": "g54327.humbug.model.Exceptions", "l": "AnimalDiesException"}, {
-    "p": "g54327.humbug.model",
+    "p": "g54327.humbug.model.Structures",
     "l": "Board"
 }, {"p": "pbt.humbug.model", "l": "BoardTest"}, {
     "p": "g54327.humbug.controller",
     "l": "Controller"
-}, {"p": "g54327.humbug.model", "l": "Direction"}, {
+}, {"p": "g54327.humbug.model.Structures", "l": "Direction"}, {
     "p": "g54327.humbug.model",
     "l": "Game"
 }, {"p": "g54327.humbug.view.text", "l": "InterfaceView"}, {
@@ -19,19 +19,19 @@ typeSearchIndex = [{"l": "All Classes", "url": "allclasses-index.html"}, {
 }, {"p": "g54327.humbug.model.Exceptions", "l": "NullPositionException"}, {
     "p": "g54327.humbug.model.Exceptions",
     "l": "NullSquareException"
-}, {"p": "g54327.humbug.model", "l": "Position"}, {
+}, {"p": "g54327.humbug.model.Structures", "l": "Position"}, {
     "p": "g54327.humbug.model.Exceptions",
     "l": "PositionOutOfBoundException"
 }, {"p": "pbt.humbug.model", "l": "PositionTest"}, {
     "p": "g54327.utils",
     "l": "RobustScanner"
-}, {"p": "g54327.humbug.model.animals", "l": "Snail"}, {
+}, {"p": "g54327.humbug.model.Animals", "l": "Snail"}, {
     "p": "pbt.humbug.model.animals",
     "l": "SnailTest"
-}, {"p": "g54327.humbug.model.animals", "l": "Spider"}, {
+}, {"p": "g54327.humbug.model.Animals", "l": "Spider"}, {
     "p": "pbt.humbug.model.animals",
     "l": "SpiderTest"
-}, {"p": "g54327.humbug.model", "l": "Square"}, {
-    "p": "g54327.humbug.model",
+}, {"p": "g54327.humbug.model.Squares", "l": "Square"}, {
+    "p": "g54327.humbug.model.Squares",
     "l": "SquareType"
-}, {"p": "g54327.humbug.view.text", "l": "Vue"}];
+}, {"p": "g54327.humbug.view.text", "l": "View"}];

@@ -17,34 +17,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model;
+package g54327.humbug.model.Squares;
 
 /**
- * Square on the board. A square has a type grass or star and it's all.
- * A square doesn't know where it is on the board.
+ * SquareType represents the type of a square on the board.
+ * Square are grass or star when there represent arrival.
  *
  * @author Andrew SASSOYE
  * @version 1.0.0
  * @since 0.1.0
  */
-public class Square {
-    private SquareType squareType;
-
+public enum SquareType {
     /**
-     * Constructor of Square on board.
-     *
-     * @param squareType Square is grass or star
+     * GRASS SQUARE TYPE
      */
-    public Square(SquareType squareType) {
-        this.squareType = squareType;
-    }
-
+    GRASS,
     /**
-     * Simple getter of type
-     *
-     * @return type of Square
+     * STAR SQUARE TYPE
      */
-    public SquareType getSquareType() {
-        return squareType;
-    }
+    STAR
+
 }

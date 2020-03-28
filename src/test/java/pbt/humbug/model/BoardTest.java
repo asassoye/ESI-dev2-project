@@ -1,15 +1,15 @@
 package pbt.humbug.model;
 
-import g54327.humbug.model.Board;
-import g54327.humbug.model.Position;
-import g54327.humbug.model.Square;
-import g54327.humbug.model.SquareType;
+import g54327.humbug.model.Squares.Square;
+import g54327.humbug.model.Squares.SquareType;
+import g54327.humbug.model.Structures.Board;
+import g54327.humbug.model.Structures.Position;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static g54327.humbug.model.SquareType.GRASS;
-import static g54327.humbug.model.SquareType.STAR;
+import static g54327.humbug.model.Squares.SquareType.GRASS;
+import static g54327.humbug.model.Squares.SquareType.STAR;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**

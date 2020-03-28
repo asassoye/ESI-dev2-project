@@ -17,14 +17,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model.animals;
+package g54327.humbug.model.Animals;
 
-import g54327.humbug.model.Board;
-import g54327.humbug.model.Direction;
 import g54327.humbug.model.Exceptions.NullSquareException;
 import g54327.humbug.model.Exceptions.PositionOutOfBoundException;
-import g54327.humbug.model.Position;
-import g54327.humbug.model.SquareType;
+import g54327.humbug.model.Squares.SquareType;
+import g54327.humbug.model.Structures.Board;
+import g54327.humbug.model.Structures.Direction;
+import g54327.humbug.model.Structures.Position;
 
 /**
  * Snail Class
@@ -44,7 +44,7 @@ public class Snail extends Animal {
     }
 
     /**
-     * Snail toString for Vue
+     * Snail toString for View
      *
      * @return " SN "
      */

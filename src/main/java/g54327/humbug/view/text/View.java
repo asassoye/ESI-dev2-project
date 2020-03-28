@@ -21,21 +21,21 @@ package g54327.humbug.view.text;
 
 import com.diogonunes.jcdp.color.ColoredPrinter;
 import com.diogonunes.jcdp.color.api.Ansi;
-import g54327.humbug.model.Board;
-import g54327.humbug.model.Direction;
-import g54327.humbug.model.Position;
-import g54327.humbug.model.SquareType;
-import g54327.humbug.model.animals.Animal;
+import g54327.humbug.model.Animals.Animal;
+import g54327.humbug.model.Squares.SquareType;
+import g54327.humbug.model.Structures.Board;
+import g54327.humbug.model.Structures.Direction;
+import g54327.humbug.model.Structures.Position;
 import g54327.utils.RobustScanner;
 
 /**
- * Vue class
+ * View class
  *
  * @author Andrew SASSOYE
- * @version 1.0.2
+ * @version 1.0.3
  * @since 0.1.0
  */
-public class Vue implements InterfaceView {
+public class View implements InterfaceView {
     private final static ColoredPrinter grassPrinter = new ColoredPrinter.Builder(0, false)
             .foreground(Ansi.FColor.WHITE).background(Ansi.BColor.GREEN)   //setting format
             .build();
@@ -71,19 +71,10 @@ public class Vue implements InterfaceView {
         this.displayBoard(board, (Animal[]) null);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public void displayBoard(Board board, Animal... animals) {
-        InterfaceView.clearScreen();
+    private static void printBoard(Board board, Animal... animals) {
+        printColumns(board);
         System.out.println();
-        System.out.printf("\t");
-        System.out.printf("   ");
 
-        for (var i = 0; i < board.getNbRow(); ++i) {
-            System.out.printf(" %d  ", i);
-        }
-        System.out.println();
         for (var i = 0; i < board.getNbRow(); ++i) {
             System.out.printf("\t");
             System.out.print(i + " ");
@@ -100,10 +91,8 @@ public class Vue implements InterfaceView {
                         printer.print(" \u2205\u2205 ");
                         printer.setAttribute(Ansi.Attribute.CLEAR);
                     }
-
                 } else {
                     ColoredPrinter printer = voidPrinter;
-
                     printer.print(" \u2205\u2205 ");
                 }
 
@@ -111,6 +100,24 @@ public class Vue implements InterfaceView {
             System.out.println();
         }
         System.out.println();
+    }
+
+    private static void printColumns(Board board) {
+        for (var i = 0; i < board.getNbRow(); ++i) {
+            System.out.printf(" %d  ", i);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void displayBoard(Board board, Animal... animals) {
+        InterfaceView.clearScreen();
+        System.out.println();
+        System.out.printf("\t");
+        System.out.printf("   ");
+
+        printBoard(board, animals);
     }
 
     /**

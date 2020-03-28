@@ -1,17 +1,17 @@
 package pbt.humbug.model.animals;
 
-import g54327.humbug.model.Board;
-import g54327.humbug.model.Direction;
-import g54327.humbug.model.Position;
-import g54327.humbug.model.Square;
-import g54327.humbug.model.animals.Animal;
-import g54327.humbug.model.animals.Snail;
-import g54327.humbug.model.animals.Spider;
+import g54327.humbug.model.Animals.Animal;
+import g54327.humbug.model.Animals.Snail;
+import g54327.humbug.model.Animals.Spider;
+import g54327.humbug.model.Squares.Square;
+import g54327.humbug.model.Structures.Board;
+import g54327.humbug.model.Structures.Direction;
+import g54327.humbug.model.Structures.Position;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static g54327.humbug.model.SquareType.GRASS;
-import static g54327.humbug.model.SquareType.STAR;
+import static g54327.humbug.model.Squares.SquareType.GRASS;
+import static g54327.humbug.model.Squares.SquareType.STAR;
 import static org.junit.jupiter.api.Assertions.*;
 //import static org.junit.jupiter.api.Assertions.*;
 

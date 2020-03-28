@@ -17,14 +17,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model;
+package g54327.humbug.model.Structures;
 
 import g54327.humbug.model.Exceptions.NullPositionException;
 import g54327.humbug.model.Exceptions.NullSquareException;
 import g54327.humbug.model.Exceptions.PositionOutOfBoundException;
+import g54327.humbug.model.Squares.Square;
+import g54327.humbug.model.Squares.SquareType;
 
-import static g54327.humbug.model.SquareType.GRASS;
-import static g54327.humbug.model.SquareType.STAR;
+import static g54327.humbug.model.Squares.SquareType.GRASS;
+import static g54327.humbug.model.Squares.SquareType.STAR;
 
 /**
  * Board class

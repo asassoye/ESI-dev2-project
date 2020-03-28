@@ -1,8 +1,8 @@
 memberSearchIndex = [{
-    "p": "g54327.humbug.model.animals",
+    "p": "g54327.humbug.model.Animals",
     "c": "Animal",
     "l": "Animal(Position)",
-    "url": "%3Cinit%3E(g54327.humbug.model.Position)"
+    "url": "%3Cinit%3E(g54327.humbug.model.Structures.Position)"
 }, {
     "p": "g54327.humbug.model.Exceptions",
     "c": "AnimalDiesException",
@@ -10,7 +10,7 @@ memberSearchIndex = [{
     "url": "%3Cinit%3E()"
 }, {"p": "g54327.humbug.view.text", "c": "InterfaceView", "l": "askDirection()"}, {
     "p": "g54327.humbug.view.text",
-    "c": "Vue",
+    "c": "View",
     "l": "askDirection()"
 }, {
     "p": "g54327.utils",
@@ -19,7 +19,7 @@ memberSearchIndex = [{
     "url": "askInt(java.lang.String,java.lang.String,java.util.function.Consumer,java.util.function.Consumer)"
 }, {"p": "g54327.humbug.view.text", "c": "InterfaceView", "l": "askPosition()"}, {
     "p": "g54327.humbug.view.text",
-    "c": "Vue",
+    "c": "View",
     "l": "askPosition()"
 }, {
     "p": "g54327.utils",
@@ -27,10 +27,10 @@ memberSearchIndex = [{
     "l": "askString(String, String, String, Consumer<String>, Consumer<String>)",
     "url": "askString(java.lang.String,java.lang.String,java.lang.String,java.util.function.Consumer,java.util.function.Consumer)"
 }, {
-    "p": "g54327.humbug.model",
+    "p": "g54327.humbug.model.Structures",
     "c": "Board",
     "l": "Board(Square[][])",
-    "url": "%3Cinit%3E(g54327.humbug.model.Square[][])"
+    "url": "%3Cinit%3E(g54327.humbug.model.Squares.Square[][])"
 }, {
     "p": "pbt.humbug.model",
     "c": "BoardTest",
@@ -45,22 +45,22 @@ memberSearchIndex = [{
     "p": "g54327.humbug.view.text",
     "c": "InterfaceView",
     "l": "displayBoard(Board, Animal...)",
-    "url": "displayBoard(g54327.humbug.model.Board,g54327.humbug.model.animals.Animal...)"
+    "url": "displayBoard(g54327.humbug.model.Structures.Board,g54327.humbug.model.Animals.Animal...)"
 }, {
     "p": "g54327.humbug.view.text",
-    "c": "Vue",
+    "c": "View",
     "l": "displayBoard(Board, Animal...)",
-    "url": "displayBoard(g54327.humbug.model.Board,g54327.humbug.model.animals.Animal...)"
+    "url": "displayBoard(g54327.humbug.model.Structures.Board,g54327.humbug.model.Animals.Animal...)"
 }, {
     "p": "g54327.humbug.view.text",
     "c": "InterfaceView",
     "l": "displayBoard(Board)",
-    "url": "displayBoard(g54327.humbug.model.Board)"
+    "url": "displayBoard(g54327.humbug.model.Structures.Board)"
 }, {
     "p": "g54327.humbug.view.text",
-    "c": "Vue",
+    "c": "View",
     "l": "displayBoard(Board)",
-    "url": "displayBoard(g54327.humbug.model.Board)"
+    "url": "displayBoard(g54327.humbug.model.Structures.Board)"
 }, {
     "p": "g54327.humbug.view.text",
     "c": "InterfaceView",
@@ -68,7 +68,7 @@ memberSearchIndex = [{
     "url": "displayError(java.lang.String)"
 }, {
     "p": "g54327.humbug.view.text",
-    "c": "Vue",
+    "c": "View",
     "l": "displayError(String)",
     "url": "displayError(java.lang.String)"
 }, {
@@ -78,19 +78,19 @@ memberSearchIndex = [{
     "url": "displayMessage(java.lang.String)"
 }, {
     "p": "g54327.humbug.view.text",
-    "c": "Vue",
+    "c": "View",
     "l": "displayMessage(String)",
     "url": "displayMessage(java.lang.String)"
-}, {"p": "g54327.humbug.model", "c": "Direction", "l": "EAST"}, {
-    "p": "g54327.humbug.model",
+}, {"p": "g54327.humbug.model.Structures", "c": "Direction", "l": "EAST"}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Position",
     "l": "equals(Object)",
     "url": "equals(java.lang.Object)"
 }, {"p": "g54327.humbug.model", "c": "Game", "l": "Game()", "url": "%3Cinit%3E()"}, {
-    "p": "g54327.humbug.model.animals",
+    "p": "g54327.humbug.model.Animals",
     "c": "Animal",
     "l": "getAnimal(Animal[], Position)",
-    "url": "getAnimal(g54327.humbug.model.animals.Animal[],g54327.humbug.model.Position)"
+    "url": "getAnimal(g54327.humbug.model.Animals.Animal[],g54327.humbug.model.Structures.Position)"
 }, {"p": "g54327.humbug.model", "c": "Game", "l": "getAnimals()"}, {
     "p": "g54327.humbug.model",
     "c": "Model",
@@ -99,37 +99,45 @@ memberSearchIndex = [{
     "p": "g54327.humbug.model",
     "c": "Model",
     "l": "getBoard()"
-}, {"p": "g54327.humbug.model", "c": "Position", "l": "getColumn()"}, {
-    "p": "g54327.humbug.model",
+}, {"p": "g54327.humbug.model.Structures", "c": "Position", "l": "getColumn()"}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Direction",
     "l": "getDeltaColumn()"
-}, {"p": "g54327.humbug.model", "c": "Direction", "l": "getDeltaRow()"}, {
-    "p": "g54327.humbug.model",
+}, {
+    "p": "g54327.humbug.model.Structures",
+    "c": "Direction",
+    "l": "getDeltaRow()"
+}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Board",
     "l": "getInitialBoard()"
-}, {"p": "g54327.humbug.model", "c": "Board", "l": "getNbColumn()"}, {
-    "p": "g54327.humbug.model",
+}, {"p": "g54327.humbug.model.Structures", "c": "Board", "l": "getNbColumn()"}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Board",
     "l": "getNbRow()"
-}, {"p": "g54327.humbug.model.animals", "c": "Animal", "l": "getPositionOnBoard()"}, {
-    "p": "g54327.humbug.model",
-    "c": "Position",
-    "l": "getRow()"
-}, {"p": "g54327.humbug.model", "c": "Square", "l": "getSquareType()"}, {
-    "p": "g54327.humbug.model",
+}, {
+    "p": "g54327.humbug.model.Animals",
+    "c": "Animal",
+    "l": "getPositionOnBoard()"
+}, {"p": "g54327.humbug.model.Structures", "c": "Position", "l": "getRow()"}, {
+    "p": "g54327.humbug.model.Squares",
+    "c": "Square",
+    "l": "getSquareType()"
+}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Board",
     "l": "getSquareType(Position)",
-    "url": "getSquareType(g54327.humbug.model.Position)"
-}, {"p": "g54327.humbug.model", "c": "SquareType", "l": "GRASS"}, {
-    "p": "g54327.humbug.model",
+    "url": "getSquareType(g54327.humbug.model.Structures.Position)"
+}, {"p": "g54327.humbug.model.Squares", "c": "SquareType", "l": "GRASS"}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Position",
     "l": "hashCode()"
 }, {
-    "p": "g54327.humbug.model",
+    "p": "g54327.humbug.model.Structures",
     "c": "Board",
     "l": "isInside(Position)",
-    "url": "isInside(g54327.humbug.model.Position)"
-}, {"p": "g54327.humbug.model.animals", "c": "Animal", "l": "isOnStar()"}, {
+    "url": "isInside(g54327.humbug.model.Structures.Position)"
+}, {"p": "g54327.humbug.model.Animals", "c": "Animal", "l": "isOnStar()"}, {
     "p": "g54327.humbug.model",
     "c": "Game",
     "l": "levelIsOver()"
@@ -164,36 +172,36 @@ memberSearchIndex = [{
     "l": "main(String[])",
     "url": "main(java.lang.String[])"
 }, {
-    "p": "g54327.humbug.model.animals",
+    "p": "g54327.humbug.model.Animals",
     "c": "Animal",
     "l": "move(Board, Direction, Animal[])",
-    "url": "move(g54327.humbug.model.Board,g54327.humbug.model.Direction,g54327.humbug.model.animals.Animal[])"
+    "url": "move(g54327.humbug.model.Structures.Board,g54327.humbug.model.Structures.Direction,g54327.humbug.model.Animals.Animal[])"
 }, {
-    "p": "g54327.humbug.model.animals",
+    "p": "g54327.humbug.model.Animals",
     "c": "Snail",
     "l": "move(Board, Direction, Animal[])",
-    "url": "move(g54327.humbug.model.Board,g54327.humbug.model.Direction,g54327.humbug.model.animals.Animal[])"
+    "url": "move(g54327.humbug.model.Structures.Board,g54327.humbug.model.Structures.Direction,g54327.humbug.model.Animals.Animal[])"
 }, {
-    "p": "g54327.humbug.model.animals",
+    "p": "g54327.humbug.model.Animals",
     "c": "Spider",
     "l": "move(Board, Direction, Animal[])",
-    "url": "move(g54327.humbug.model.Board,g54327.humbug.model.Direction,g54327.humbug.model.animals.Animal[])"
+    "url": "move(g54327.humbug.model.Structures.Board,g54327.humbug.model.Structures.Direction,g54327.humbug.model.Animals.Animal[])"
 }, {
     "p": "g54327.humbug.model",
     "c": "Game",
     "l": "move(Position, Direction)",
-    "url": "move(g54327.humbug.model.Position,g54327.humbug.model.Direction)"
+    "url": "move(g54327.humbug.model.Structures.Position,g54327.humbug.model.Structures.Direction)"
 }, {
     "p": "g54327.humbug.model",
     "c": "Model",
     "l": "move(Position, Direction)",
-    "url": "move(g54327.humbug.model.Position,g54327.humbug.model.Direction)"
+    "url": "move(g54327.humbug.model.Structures.Position,g54327.humbug.model.Structures.Direction)"
 }, {
-    "p": "g54327.humbug.model",
+    "p": "g54327.humbug.model.Structures",
     "c": "Position",
     "l": "next(Direction)",
-    "url": "next(g54327.humbug.model.Direction)"
-}, {"p": "g54327.humbug.model", "c": "Direction", "l": "NORTH"}, {
+    "url": "next(g54327.humbug.model.Structures.Direction)"
+}, {"p": "g54327.humbug.model.Structures", "c": "Direction", "l": "NORTH"}, {
     "p": "g54327.humbug.model.Exceptions",
     "c": "NullPositionException",
     "l": "NullPositionException()",
@@ -233,12 +241,12 @@ memberSearchIndex = [{
     "c": "NullSquareException",
     "l": "NullSquareException(Throwable)",
     "url": "%3Cinit%3E(java.lang.Throwable)"
-}, {"p": "g54327.humbug.model.animals", "c": "Animal", "l": "onStar"}, {
-    "p": "g54327.humbug.model",
+}, {"p": "g54327.humbug.model.Animals", "c": "Animal", "l": "onStar"}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Position",
     "l": "Position(int, int)",
     "url": "%3Cinit%3E(int,int)"
-}, {"p": "g54327.humbug.model.animals", "c": "Animal", "l": "positionOnBoard"}, {
+}, {"p": "g54327.humbug.model.Animals", "c": "Animal", "l": "positionOnBoard"}, {
     "p": "g54327.humbug.model.Exceptions",
     "c": "PositionOutOfBoundException",
     "l": "PositionOutOfBoundException()",
@@ -263,46 +271,46 @@ memberSearchIndex = [{
     "c": "RobustScanner",
     "l": "RobustScanner()",
     "url": "%3Cinit%3E()"
-}, {"p": "g54327.humbug.model.animals", "c": "Animal", "l": "setOnStar(boolean)"}, {
-    "p": "g54327.humbug.model.animals",
+}, {"p": "g54327.humbug.model.Animals", "c": "Animal", "l": "setOnStar(boolean)"}, {
+    "p": "g54327.humbug.model.Animals",
     "c": "Animal",
     "l": "setPositionOnBoard(Position)",
-    "url": "setPositionOnBoard(g54327.humbug.model.Position)"
+    "url": "setPositionOnBoard(g54327.humbug.model.Structures.Position)"
 }, {
-    "p": "g54327.humbug.model",
+    "p": "g54327.humbug.model.Structures",
     "c": "Board",
     "l": "setSquareType(Position, SquareType)",
-    "url": "setSquareType(g54327.humbug.model.Position,g54327.humbug.model.SquareType)"
+    "url": "setSquareType(g54327.humbug.model.Structures.Position,g54327.humbug.model.Squares.SquareType)"
 }, {"p": "pbt.humbug.model", "c": "BoardTest", "l": "setUp()"}, {
     "p": "pbt.humbug.model.animals",
     "c": "SnailTest",
     "l": "setUp()"
 }, {"p": "pbt.humbug.model.animals", "c": "SpiderTest", "l": "setUp()"}, {
-    "p": "g54327.humbug.model.animals",
+    "p": "g54327.humbug.model.Animals",
     "c": "Snail",
     "l": "Snail(Position)",
-    "url": "%3Cinit%3E(g54327.humbug.model.Position)"
+    "url": "%3Cinit%3E(g54327.humbug.model.Structures.Position)"
 }, {
     "p": "pbt.humbug.model.animals",
     "c": "SnailTest",
     "l": "SnailTest()",
     "url": "%3Cinit%3E()"
-}, {"p": "g54327.humbug.model", "c": "Direction", "l": "SOUTH"}, {
-    "p": "g54327.humbug.model.animals",
+}, {"p": "g54327.humbug.model.Structures", "c": "Direction", "l": "SOUTH"}, {
+    "p": "g54327.humbug.model.Animals",
     "c": "Spider",
     "l": "Spider(Position)",
-    "url": "%3Cinit%3E(g54327.humbug.model.Position)"
+    "url": "%3Cinit%3E(g54327.humbug.model.Structures.Position)"
 }, {
     "p": "pbt.humbug.model.animals",
     "c": "SpiderTest",
     "l": "SpiderTest()",
     "url": "%3Cinit%3E()"
 }, {
-    "p": "g54327.humbug.model",
+    "p": "g54327.humbug.model.Squares",
     "c": "Square",
     "l": "Square(SquareType)",
-    "url": "%3Cinit%3E(g54327.humbug.model.SquareType)"
-}, {"p": "g54327.humbug.model", "c": "SquareType", "l": "STAR"}, {
+    "url": "%3Cinit%3E(g54327.humbug.model.Squares.SquareType)"
+}, {"p": "g54327.humbug.model.Squares", "c": "SquareType", "l": "STAR"}, {
     "p": "g54327.humbug.controller",
     "c": "Controller",
     "l": "startGame()"
@@ -374,26 +382,27 @@ memberSearchIndex = [{
     "p": "pbt.humbug.model",
     "c": "PositionTest",
     "l": "testNext_west()"
-}, {"p": "g54327.humbug.model", "c": "Position", "l": "toString()"}, {
-    "p": "g54327.humbug.model.animals",
-    "c": "Snail",
+}, {"p": "g54327.humbug.model.Animals", "c": "Snail", "l": "toString()"}, {
+    "p": "g54327.humbug.model.Animals",
+    "c": "Spider",
     "l": "toString()"
-}, {"p": "g54327.humbug.model.animals", "c": "Spider", "l": "toString()"}, {
-    "p": "g54327.humbug.model",
-    "c": "Direction",
+}, {"p": "g54327.humbug.model.Structures", "c": "Position", "l": "toString()"}, {
+    "p": "g54327.humbug.model.Squares",
+    "c": "SquareType",
     "l": "valueOf(String)",
     "url": "valueOf(java.lang.String)"
 }, {
-    "p": "g54327.humbug.model",
-    "c": "SquareType",
+    "p": "g54327.humbug.model.Structures",
+    "c": "Direction",
     "l": "valueOf(String)",
     "url": "valueOf(java.lang.String)"
-}, {"p": "g54327.humbug.model", "c": "Direction", "l": "values()"}, {
-    "p": "g54327.humbug.model",
-    "c": "SquareType",
-    "l": "values()"
-}, {"p": "g54327.humbug.view.text", "c": "Vue", "l": "Vue()", "url": "%3Cinit%3E()"}, {
-    "p": "g54327.humbug.model",
+}, {"p": "g54327.humbug.model.Squares", "c": "SquareType", "l": "values()"}, {
+    "p": "g54327.humbug.model.Structures",
     "c": "Direction",
-    "l": "WEST"
-}];
+    "l": "values()"
+}, {
+    "p": "g54327.humbug.view.text",
+    "c": "View",
+    "l": "View()",
+    "url": "%3Cinit%3E()"
+}, {"p": "g54327.humbug.model.Structures", "c": "Direction", "l": "WEST"}];

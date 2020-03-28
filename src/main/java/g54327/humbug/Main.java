@@ -23,13 +23,13 @@ import g54327.humbug.controller.Controller;
 import g54327.humbug.model.Game;
 import g54327.humbug.model.Model;
 import g54327.humbug.view.text.InterfaceView;
-import g54327.humbug.view.text.Vue;
+import g54327.humbug.view.text.View;
 
 /**
  * Main
  *
  * @author Andrew SASSOYE
- * @version 0.2.0
+ * @version 0.2.1
  */
 public class Main {
     /**
@@ -37,12 +37,10 @@ public class Main {
      *
      * @param args Execution arguments
      */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Model model = new Game();
-        InterfaceView view = new Vue();
+        InterfaceView view = new View();
         Controller controller = new Controller(model, view);
         controller.startGame();
-
-
     }
 }

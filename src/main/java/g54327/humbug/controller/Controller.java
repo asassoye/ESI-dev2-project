@@ -19,11 +19,11 @@
 
 package g54327.humbug.controller;
 
-import g54327.humbug.model.Direction;
 import g54327.humbug.model.Exceptions.AnimalDiesException;
 import g54327.humbug.model.Game;
 import g54327.humbug.model.Model;
-import g54327.humbug.model.Position;
+import g54327.humbug.model.Structures.Direction;
+import g54327.humbug.model.Structures.Position;
 import g54327.humbug.view.text.InterfaceView;
 
 /**
