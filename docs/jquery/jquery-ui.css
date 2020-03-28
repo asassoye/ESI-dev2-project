@@ -9,7 +9,6 @@
 .ui-helper-hidden {
     display: none;
 }
-
 .ui-helper-hidden-accessible {
     border: 0;
     clip: rect(0 0 0 0);
@@ -20,7 +19,6 @@
     position: absolute;
     width: 1px;
 }
-
 .ui-helper-reset {
     margin: 0;
     padding: 0;
@@ -31,18 +29,15 @@
     font-size: 100%;
     list-style: none;
 }
-
 .ui-helper-clearfix:before,
 .ui-helper-clearfix:after {
     content: "";
     display: table;
     border-collapse: collapse;
 }
-
 .ui-helper-clearfix:after {
     clear: both;
 }
-
 .ui-helper-zfix {
     width: 100%;
     height: 100%;
@@ -95,14 +90,12 @@
     width: 100%;
     height: 100%;
 }
-
 .ui-autocomplete {
     position: absolute;
     top: 0;
     left: 0;
     cursor: default;
 }
-
 .ui-menu {
     list-style: none;
     padding: 0;
@@ -110,23 +103,19 @@
     display: block;
     outline: 0;
 }
-
 .ui-menu .ui-menu {
     position: absolute;
 }
-
 .ui-menu .ui-menu-item {
     margin: 0;
     cursor: pointer;
     /* support: IE10, see #8844 */
     list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 }
-
 .ui-menu .ui-menu-item-wrapper {
     position: relative;
     padding: 3px 1em 3px .4em;
 }
-
 .ui-menu .ui-menu-divider {
     margin: 5px 0;
     height: 0;
@@ -134,7 +123,6 @@
     line-height: 0;
     border-width: 1px 0 0 0;
 }
-
 .ui-menu .ui-state-focus,
 .ui-menu .ui-state-active {
     margin: -1px;
@@ -144,7 +132,6 @@
 .ui-menu-icons {
     position: relative;
 }
-
 .ui-menu-icons .ui-menu-item-wrapper {
     padding-left: 2em;
 }
@@ -170,11 +157,9 @@
     font-family: Verdana, Arial, sans-serif;
     font-size: 1.1em;
 }
-
 .ui-widget .ui-widget {
     font-size: 1em;
 }
-
 .ui-widget input,
 .ui-widget select,
 .ui-widget textarea,
@@ -182,28 +167,23 @@
     font-family: Verdana, Arial, sans-serif;
     font-size: 1em;
 }
-
 .ui-widget.ui-widget-content {
     border: 1px solid #d3d3d3;
 }
-
 .ui-widget-content {
     border: 1px solid #aaaaaa;
     background: #ffffff;
     color: #222222;
 }
-
 .ui-widget-content a {
     color: #222222;
 }
-
 .ui-widget-header {
     border: 1px solid #aaaaaa;
     background: #cccccc url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x;
     color: #222222;
     font-weight: bold;
 }
-
 .ui-widget-header a {
     color: #222222;
 }
@@ -223,7 +203,6 @@ html .ui-button.ui-state-disabled:active {
     font-weight: normal;
     color: #555555;
 }
-
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited,
@@ -234,7 +213,6 @@ a:visited.ui-button,
     color: #555555;
     text-decoration: none;
 }
-
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
@@ -248,7 +226,6 @@ a:visited.ui-button,
     font-weight: normal;
     color: #212121;
 }
-
 .ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
@@ -266,7 +243,6 @@ a.ui-button:focus {
 .ui-visual-focus {
     box-shadow: 0 0 3px 1px rgb(94, 158, 214);
 }
-
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active,
@@ -278,13 +254,11 @@ a.ui-button:active,
     font-weight: normal;
     color: #212121;
 }
-
 .ui-icon-background,
 .ui-state-active .ui-icon-background {
     border: #aaaaaa;
     background-color: #212121;
 }
-
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
@@ -301,18 +275,15 @@ a.ui-button:active,
     background: #fbf9ee url("images/ui-bg_glass_55_fbf9ee_1x400.png") 50% 50% repeat-x;
     color: #363636;
 }
-
 .ui-state-checked {
     border: 1px solid #fcefa1;
     background: #fbf9ee;
 }
-
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
     color: #363636;
 }
-
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
@@ -320,25 +291,21 @@ a.ui-button:active,
     background: #fef1ec url("images/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x;
     color: #cd0a0a;
 }
-
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 .ui-widget-header .ui-state-error a {
     color: #cd0a0a;
 }
-
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 .ui-widget-header .ui-state-error-text {
     color: #cd0a0a;
 }
-
 .ui-priority-primary,
 .ui-widget-content .ui-priority-primary,
 .ui-widget-header .ui-priority-primary {
     font-weight: bold;
 }
-
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
@@ -346,7 +313,6 @@ a.ui-button:active,
     filter: Alpha(Opacity=70); /* support: IE8 */
     font-weight: normal;
 }
-
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
@@ -354,7 +320,6 @@ a.ui-button:active,
     filter: Alpha(Opacity=35); /* support: IE8 */
     background-image: none;
 }
-
 .ui-state-disabled .ui-icon {
     filter: Alpha(Opacity=35); /* support: IE8 - See #6059 */
 }
@@ -367,28 +332,23 @@ a.ui-button:active,
     width: 16px;
     height: 16px;
 }
-
 .ui-icon,
 .ui-widget-content .ui-icon {
     background-image: url("images/ui-icons_222222_256x240.png");
 }
-
 .ui-widget-header .ui-icon {
     background-image: url("images/ui-icons_222222_256x240.png");
 }
-
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,
 .ui-button:hover .ui-icon,
 .ui-button:focus .ui-icon {
     background-image: url("images/ui-icons_454545_256x240.png");
 }
-
 .ui-state-active .ui-icon,
 .ui-button:active .ui-icon {
     background-image: url("images/ui-icons_454545_256x240.png");
 }
-
 .ui-state-highlight .ui-icon,
 .ui-button .ui-state-highlight.ui-icon {
     background-image: url("images/ui-icons_2e83ff_256x240.png");
@@ -1116,21 +1076,18 @@ a.ui-button:active,
 .ui-corner-tl {
     border-top-left-radius: 4px;
 }
-
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
     border-top-right-radius: 4px;
 }
-
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
     border-bottom-left-radius: 4px;
 }
-
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
@@ -1144,7 +1101,6 @@ a.ui-button:active,
     opacity: .3;
     filter: Alpha(Opacity=30); /* support: IE8 */
 }
-
 .ui-widget-shadow {
     -webkit-box-shadow: -8px -8px 8px #aaaaaa;
     box-shadow: -8px -8px 8px #aaaaaa;

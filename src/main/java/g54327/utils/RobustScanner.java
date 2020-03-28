@@ -19,16 +19,15 @@
 
 package g54327.utils;
 
-import g54327.humbug.model.Direction;
-
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.regex.Pattern;
 
 /**
  * RobustScanner
  *
  * @author Andrew SASSOYE
- * @version 1.0.0
+ * @version 1.0.1
  * @since 0.2.0
  */
 public final class RobustScanner {
@@ -57,31 +56,33 @@ public final class RobustScanner {
     }
 
     /**
-     * Ask Direction (robust) (N, S, W, E)
+     * Ask askString (robust) with regex
      *
      * @param preMessage    Message to display before asking
      * @param errorMessage  Message to display when error
+     * @param regex         Regular expression
      * @param preConsumer   Lambda to display preMessage and stuff
      * @param errorConsumer Lambda to display error and stuff
-     *
-     * @return asked Direction
+     * @return asked String
      */
-    public static Direction askDirection(String preMessage, String errorMessage, Consumer<String> preConsumer, Consumer<String> errorConsumer) {
+    public static String askString(String preMessage, String errorMessage, String regex, Consumer<String> preConsumer, Consumer<String> errorConsumer) {
         preConsumer.accept(preMessage);
         System.out.print("\t");
-        Direction direction;
+        String word;
+        Pattern pattern = Pattern.compile(regex);
         do {
             while (!scanner.hasNext()) {
                 scanner.nextLine();
                 errorConsumer.accept(errorMessage);
                 System.out.print("\t");
             }
-            direction = Direction.valueOfByShortName(scanner.next());
-            if (direction == null) {
+            word = scanner.next();
+            if (!pattern.matcher(word).matches()) {
                 errorConsumer.accept(errorMessage);
+                word = null;
             }
-        } while (direction == null);
+        } while (word == null);
 
-        return direction;
+        return word;
     }
 }

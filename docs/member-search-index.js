@@ -15,17 +15,17 @@ memberSearchIndex = [{
 }, {
     "p": "g54327.utils",
     "c": "RobustScanner",
-    "l": "askDirection(String, String, Consumer<String>, Consumer<String>)",
-    "url": "askDirection(java.lang.String,java.lang.String,java.util.function.Consumer,java.util.function.Consumer)"
-}, {
-    "p": "g54327.utils",
-    "c": "RobustScanner",
     "l": "askInt(String, String, Consumer<String>, Consumer<String>)",
     "url": "askInt(java.lang.String,java.lang.String,java.util.function.Consumer,java.util.function.Consumer)"
 }, {"p": "g54327.humbug.view.text", "c": "InterfaceView", "l": "askPosition()"}, {
     "p": "g54327.humbug.view.text",
     "c": "Vue",
     "l": "askPosition()"
+}, {
+    "p": "g54327.utils",
+    "c": "RobustScanner",
+    "l": "askString(String, String, String, Consumer<String>, Consumer<String>)",
+    "url": "askString(java.lang.String,java.lang.String,java.lang.String,java.util.function.Consumer,java.util.function.Consumer)"
 }, {
     "p": "g54327.humbug.model",
     "c": "Board",
@@ -388,11 +388,6 @@ memberSearchIndex = [{
     "c": "SquareType",
     "l": "valueOf(String)",
     "url": "valueOf(java.lang.String)"
-}, {
-    "p": "g54327.humbug.model",
-    "c": "Direction",
-    "l": "valueOfByShortName(String)",
-    "url": "valueOfByShortName(java.lang.String)"
 }, {"p": "g54327.humbug.model", "c": "Direction", "l": "values()"}, {
     "p": "g54327.humbug.model",
     "c": "SquareType",

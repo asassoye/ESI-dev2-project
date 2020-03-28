@@ -76,21 +76,4 @@ public enum Direction {
     public int getDeltaColumn() {
         return this.deltaColumn;
     }
-
-    /**
-     * get Direction by short name (N, W, E, S)
-     *
-     * @param s String [N, E, W, S]
-     * @return Direction corresponding to short name
-     * @since 1.0.1
-     */
-    public static Direction valueOfByShortName(String s) {
-        for (var direction : Direction.values()) {
-            if (direction.name().charAt(0) == s.charAt(0)) {
-                return direction;
-            }
-        }
-
-        return null;
-    }
 }

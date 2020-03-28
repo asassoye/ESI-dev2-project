@@ -32,7 +32,7 @@ import g54327.utils.RobustScanner;
  * Vue class
  *
  * @author Andrew SASSOYE
- * @version 1.0.1
+ * @version 1.0.2
  * @since 0.1.0
  */
 public class Vue implements InterfaceView {
@@ -158,15 +158,16 @@ public class Vue implements InterfaceView {
      */
     public Direction askDirection() {
         System.out.println();
-        starPrinter.println("\tChoose the direction [N, E, S, W]\t");
-        Direction direction = RobustScanner
-                .askDirection(
+        starPrinter.println("\tChoose the direction [NORTH, EAST, SOUTH, WEST]\t");
+        String directionString = RobustScanner
+                .askString(
                         "Direction:",
-                        "Error: Must be in [N, E, S, W]. Retry:",
+                        "Error: Must be in [NORTH, EAST, SOUTH, WEST]. Retry:",
+                        "^(NORTH|EAST|SOUTH|WEST)$",
                         grassPrinter::print,
                         errorPrinter::print
                 );
 
-        return direction;
+        return Direction.valueOf(directionString);
     }
 }
