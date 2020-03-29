@@ -36,8 +36,8 @@ public class Position {
     /**
      * Constructor
      *
-     * @param row
-     * @param column
+     * @param row    initial row
+     * @param column initial column
      */
     public Position(int row, int column) {
         this.row = row;

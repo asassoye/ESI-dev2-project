@@ -58,8 +58,7 @@ public class Board {
                 {null, new Square(GRASS), new Square(GRASS)},
                 {null, null, new Square(STAR)}
         };
-        Board board = new Board(squares);
-        return board;
+        return new Board(squares);
     }
 
     /**

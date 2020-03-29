@@ -50,7 +50,7 @@ public class Snail extends Animal {
      */
     @Override
     public String toString() {
-        return " SN ";
+        return "SNAIL";
     }
 
     /**
