@@ -4,7 +4,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/asassoye/ESI-dev2-project?style=for-the-badge)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/asassoye/ESI-dev2-project/Java%20CI?style=for-the-badge)
 
-[JavaDOC](https://asassoye.github.io/ESI-dev2-project/index.html)
+![Humbug](.github/humbug.png)
 
 ## Structure du projet
 ```
@@ -66,6 +66,8 @@
 ├── pom.xml
 └── README.md
 ```
+## Documentation
+Vérifiez la documentation [ici](https://asassoye.github.io/ESI-dev2-project/index.html)
 
 ## Compiler
 ### Maven
@@ -83,7 +85,7 @@ mvn package
 
 Puis executez:
 ```
-java -jar target/humbug-0.1.0.jar
+java -jar target/humbug-1.0.0.jar
 ```
 
 ## Tests

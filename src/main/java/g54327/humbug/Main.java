@@ -29,7 +29,7 @@ import g54327.humbug.view.text.View;
  * Main
  *
  * @author Andrew SASSOYE
- * @version 0.2.1
+ * @version 1.0.0
  */
 public class Main {
     /**
