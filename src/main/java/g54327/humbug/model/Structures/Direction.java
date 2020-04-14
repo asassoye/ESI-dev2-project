@@ -23,7 +23,7 @@ package g54327.humbug.model.Structures;
  * Direction enumeration. NORTH, SOUTH, EAST or WEST
  *
  * @author Andrew SASSOYE
- * @version 1.0.1
+ * @version 1.1.0
  * @since 0.1.0
  */
 public enum Direction {
@@ -57,6 +57,26 @@ public enum Direction {
     Direction(int deltaRow, int deltaColumn) {
         this.deltaRow = deltaRow;
         this.deltaColumn = deltaColumn;
+    }
+
+    /**
+     * Gives the opposite Direction
+     *
+     * @return Opposite Direction
+     * @since 1.1.0
+     */
+    public Direction opposite() {
+        switch (this) {
+            case NORTH:
+                return Direction.SOUTH;
+            case SOUTH:
+                return Direction.NORTH;
+            case EAST:
+                return Direction.WEST;
+            case WEST:
+            default:
+                return Direction.EAST;
+        }
     }
 
     /**

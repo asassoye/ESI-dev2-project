@@ -19,16 +19,23 @@
 
 package g54327.humbug.model.Squares;
 
+import g54327.humbug.model.Structures.Direction;
+
 /**
  * Square on the board. A square has a type grass or star and it's all.
  * A square doesn't know where it is on the board.
  *
  * @author Andrew SASSOYE
- * @version 1.0.0
+ * @version 2.0.0
  * @since 0.1.0
  */
 public class Square {
     private SquareType squareType;
+
+    private boolean northWall;
+    private boolean southWall;
+    private boolean westWall;
+    private boolean eastWall;
 
     /**
      * Constructor of Square on board.
@@ -46,5 +53,107 @@ public class Square {
      */
     public SquareType getSquareType() {
         return squareType;
+    }
+
+    /**
+     * Verify if wall is present in given Direction
+     *
+     * @param direction Direction of wall
+     * @return true if wall is present, false if not
+     * @since 2.0.0
+     */
+    public boolean hasWall(Direction direction) {
+        switch (direction) {
+            case NORTH:
+                return this.hasNorthWall();
+            case SOUTH:
+                return this.hasSouthWall();
+            case WEST:
+                return this.hasWestWall();
+            case EAST:
+                return this.hasEastWall();
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * this.northWall getter
+     *
+     * @return this.northWall
+     * @since 2.0.0
+     */
+    public boolean hasNorthWall() {
+        return northWall;
+    }
+
+    /**
+     * this.nortWall setter
+     *
+     * @param northWall New northWall value
+     * @since 2.0.0
+     */
+    public void setNorthWall(boolean northWall) {
+        this.northWall = northWall;
+    }
+
+    /**
+     * this.southWall getter
+     *
+     * @return this.southWall
+     * @since 2.0.0
+     */
+    public boolean hasSouthWall() {
+        return southWall;
+    }
+
+    /**
+     * this.southWall setter
+     *
+     * @param southWall New southWall value
+     * @since 2.0.0
+     */
+    public void setSouthWall(boolean southWall) {
+        this.southWall = southWall;
+    }
+
+    /**
+     * this.westWall getter
+     *
+     * @return this.westWall
+     * @since 2.0.0
+     */
+    public boolean hasWestWall() {
+        return westWall;
+    }
+
+    /**
+     * this.westWall setter
+     *
+     * @param westWall New westWall value
+     * @since 2.0.0
+     */
+    public void setWestWall(boolean westWall) {
+        this.westWall = westWall;
+    }
+
+    /**
+     * this.eastWall getter
+     *
+     * @return this.eastWall
+     * @since 2.0.0
+     */
+    public boolean hasEastWall() {
+        return eastWall;
+    }
+
+    /**
+     * this.eastWall setter
+     *
+     * @param eastWall New eastWall value
+     * @since 2.0.0
+     */
+    public void setEastWall(boolean eastWall) {
+        this.eastWall = eastWall;
     }
 }

@@ -32,7 +32,7 @@ import static g54327.humbug.model.Squares.SquareType.STAR;
  * Board class
  *
  * @author Andrew SASSOYE
- * @version 1.0.0
+ * @version 1.1.0
  * @since 0.1.0
  */
 public class Board {
@@ -96,6 +96,17 @@ public class Board {
      * @return SquareType at position
      */
     public SquareType getSquareType(Position position) {
+        return this.getSquare(position).getSquareType();
+    }
+
+    /**
+     * get a Square at a given position
+     *
+     * @param position Position to get Square
+     * @return Square at position
+     * @since 1.1.0
+     */
+    public Square getSquare(Position position) {
         if (position == null) {
             throw new NullPositionException("Position is not defined");
         }
@@ -113,7 +124,7 @@ public class Board {
             throw new NullSquareException("No Square at asked position");
         }
 
-        return this.squares[position.getRow()][position.getColumn()].getSquareType();
+        return this.squares[position.getRow()][position.getColumn()];
     }
 
     /**

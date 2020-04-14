@@ -30,7 +30,7 @@ import g54327.humbug.model.Structures.Position;
  * Spider Class
  *
  * @author Andrew SASSOYE
- * @version 1.0.0
+ * @version 2.0.0
  * @since 0.2.0
  */
 public class Spider extends Animal {
@@ -65,6 +65,12 @@ public class Spider extends Animal {
         } catch (PositionOutOfBoundException | NullSquareException e) {
             this.positionOnBoard = null;
             return null;
+        }
+
+        if (board.getSquare(this.positionOnBoard).hasWall(direction)
+                || board.getSquare(nextPosition).hasWall(direction.opposite())
+        ) {
+            return this.positionOnBoard;
         }
 
         for (Animal animal : animals) {
