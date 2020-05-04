@@ -22,8 +22,7 @@ package g54327.humbug.view.text;
 import com.diogonunes.jcdp.color.ColoredPrinter;
 import com.diogonunes.jcdp.color.api.Ansi;
 import g54327.humbug.model.Animals.Animal;
-import g54327.humbug.model.Animals.Snail;
-import g54327.humbug.model.Animals.Spider;
+import g54327.humbug.model.Squares.Square;
 import g54327.humbug.model.Squares.SquareType;
 import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
@@ -34,7 +33,7 @@ import g54327.utils.RobustScanner;
  * View class
  *
  * @author Andrew SASSOYE
- * @version 1.0.4
+ * @version 1.1.0
  * @since 0.1.0
  */
 public class View implements InterfaceView {
@@ -74,50 +73,67 @@ public class View implements InterfaceView {
     }
 
     private static void printBoard(Board board, Animal... animals) {
-        printColumns(board);
+        Grid grid = new Grid(board.getNbColumn(), board.getNbRow(), 3, 1);
         System.out.println();
 
         for (var i = 0; i < board.getNbRow(); ++i) {
-            System.out.print("\t");
-            System.out.print(i + " ");
             for (var j = 0; j < board.getNbColumn(); ++j) {
                 Position position = new Position(i, j);
                 if (board.isInside(position)) {
+                    Square square = board.getSquare(position);
                     Animal animal = Animal.getAnimal(animals, position);
-                    ColoredPrinter printer = getColoredPrinter(board.getSquareType(position));
 
                     if (animal != null && !animal.isOnStar()) {
-                        if (animal instanceof Snail) {
-                            printer.print(" SN ");
-                        } else if (animal instanceof Spider) {
-                            printer.print(" SP ");
-                        } else {
-                            printer.print(" ?? ");
-                        }
+                        grid.setElement(i, j, animal.toString(),
+                                square.hasNorthWall(),
+                                square.hasSouthWall(),
+                                square.hasWestWall(),
+                                square.hasEastWall()
+                        );
                     } else {
-                        printer.setAttribute(Ansi.Attribute.HIDDEN);
-                        printer.print(" \u2205\u2205 ");
-                        printer.setAttribute(Ansi.Attribute.CLEAR);
+                        switch (board.getSquareType(position)) {
+                            case GRASS:
+                                grid.setElement(i, j, String.valueOf(Grid.GRASS),
+                                        square.hasNorthWall(),
+                                        square.hasSouthWall(),
+                                        square.hasWestWall(),
+                                        square.hasEastWall()
+                                );
+                                break;
+                            case STAR:
+                                grid.setElement(i, j, String.valueOf(Grid.STAR),
+                                        square.hasNorthWall(),
+                                        square.hasSouthWall(),
+                                        square.hasWestWall(),
+                                        square.hasEastWall()
+                                );
+                                break;
+                            default:
+                                grid.setElement(i, j, "?",
+                                        square.hasNorthWall(),
+                                        square.hasSouthWall(),
+                                        square.hasWestWall(),
+                                        square.hasEastWall()
+                                );
+                        }
                     }
-                } else {
-                    voidPrinter.print(" \u2205\u2205 ");
                 }
+            }
+        }
 
+        for (char[] row : grid.getGrid()) {
+            System.out.print("\t");
+            for (char element : row) {
+                System.out.print(element);
             }
             System.out.println();
-        }
-        System.out.println();
-    }
-
-    private static void printColumns(Board board) {
-        for (var i = 0; i < board.getNbColumn(); ++i) {
-            System.out.printf(" %d  ", i);
         }
     }
 
     /**
      * {@inheritDoc}
      */
+    @Override
     public void displayBoard(Board board, Animal... animals) {
         InterfaceView.clearScreen();
         System.out.println();
@@ -164,7 +180,7 @@ public class View implements InterfaceView {
                 );
 
         System.out.println();
-        return new Position(row, column);
+        return new Position(row - 1, column - 1);
     }
 
     /**

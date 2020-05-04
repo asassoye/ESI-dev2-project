@@ -32,11 +32,11 @@ import static g54327.humbug.model.Squares.SquareType.STAR;
  * Board class
  *
  * @author Andrew SASSOYE
- * @version 1.1.0
+ * @version 1.1.1
  * @since 0.1.0
  */
 public class Board {
-    private Square[][] squares;
+    private final Square[][] squares;
 
     /**
      * Board constructor
@@ -97,6 +97,15 @@ public class Board {
      */
     public SquareType getSquareType(Position position) {
         return this.getSquare(position).getSquareType();
+    }
+
+    /**
+     * this.squares getter
+     *
+     * @return this.squares
+     */
+    public Square[][] getSquares() {
+        return squares;
     }
 
     /**

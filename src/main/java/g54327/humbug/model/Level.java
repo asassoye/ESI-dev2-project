@@ -17,28 +17,59 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model.Exceptions;
+package g54327.humbug.model;
+
+import g54327.humbug.model.Animals.Animal;
+import g54327.humbug.model.Structures.Board;
 
 /**
- * LevelNotStarted RuntimeException
+ * Level class
  *
  * @author Andrew SASSOYE
- * @version 1.0.1
- * @since 0.2.0
+ * @version 1.0.0
+ * @since 2.0.0
  */
-public class LevelNotStartedException extends IllegalStateException {
-    public LevelNotStartedException() {
+public class Level {
+    private final Board board;
+
+    private final Animal[] animals;
+
+    private final int nMoves;
+
+    private Level(Board board, Animal[] animals, int nMoves) {
+        this.board = board;
+        this.animals = animals;
+        this.nMoves = nMoves;
     }
 
-    public LevelNotStartedException(String s) {
-        super(s);
+    public static Level getLevel(int level) {
+        return null;
     }
 
-    public LevelNotStartedException(String message, Throwable cause) {
-        super(message, cause);
+    /**
+     * this.board getter
+     *
+     * @return this.board
+     */
+    public Board getBoard() {
+        return board;
     }
 
-    public LevelNotStartedException(Throwable cause) {
-        super(cause);
+    /**
+     * this.animals getter
+     *
+     * @return this.animals
+     */
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    /**
+     * this.nMoves getter
+     *
+     * @return this.nMoves
+     */
+    public int getNMoves() {
+        return nMoves;
     }
 }

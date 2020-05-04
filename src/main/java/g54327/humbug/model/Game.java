@@ -31,13 +31,17 @@ import g54327.humbug.model.Structures.Position;
  * Game class
  *
  * @author Andrew SASSOYE
- * @version 1.0.0
+ * @version 1.1.0
  * @since 0.2.0
  */
 public class Game implements Model {
     private Board board;
 
     private Animal[] animals;
+
+    private int remainingMoves;
+
+    private int currentLevel;
 
     /**
      * {@inheritDoc}
@@ -59,9 +63,18 @@ public class Game implements Model {
      * {@inheritDoc}
      */
     @Override
+    public int getRemainingMoves() {
+        return this.remainingMoves;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public void startLevel(int level) {
+        this.currentLevel = level;
         switch (level) {
-            case 1:
+            default:
                 this.board = Board.getInitialBoard();
                 this.animals = new Animal[]{
                         new Snail(new Position(0, 0))
@@ -73,17 +86,18 @@ public class Game implements Model {
      * {@inheritDoc}
      */
     @Override
-    public boolean levelIsOver() {
+    public LevelStatus getLevelStatus() {
         if (this.board == null || this.animals == null) {
-            throw new LevelNotStartedException();
+            return LevelStatus.NOT_STARTED;
         }
 
         for (var animal : animals) {
             if (!animal.isOnStar()) {
-                return false;
+                return LevelStatus.IN_PROGRESS;
             }
         }
-        return true;
+
+        return LevelStatus.WIN;
     }
 
     /**
@@ -91,7 +105,7 @@ public class Game implements Model {
      */
     @Override
     public void move(Position position, Direction direction) {
-        if (this.board == null || this.animals == null) {
+        if (this.getLevelStatus() != LevelStatus.IN_PROGRESS) {
             throw new LevelNotStartedException();
         }
 

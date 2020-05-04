@@ -28,7 +28,7 @@ import g54327.humbug.model.Structures.Position;
  * Model interface
  *
  * @author Andrew SASSOYE
- * @version 1.0.0
+ * @version 1.1.0
  * @since 0.2.0
  */
 public interface Model {
@@ -47,6 +47,14 @@ public interface Model {
     Animal[] getAnimals();
 
     /**
+     * this.remainingMoves getter
+     *
+     * @return this.remainingMoves
+     * @since 1.1.0
+     */
+    int getRemainingMoves();
+
+    /**
      * Start a given level
      *
      * @param level Level to start
@@ -54,11 +62,12 @@ public interface Model {
     void startLevel(int level);
 
     /**
-     * Checks if level is over
+     * Checks the level status
      *
-     * @return true if over, false if not
+     * @return Actual status
+     * @since 1.1.0
      */
-    boolean levelIsOver();
+    LevelStatus getLevelStatus();
 
     /**
      * Move an animal at a given position to a given direction.

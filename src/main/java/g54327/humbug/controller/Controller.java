@@ -21,6 +21,7 @@ package g54327.humbug.controller;
 
 import g54327.humbug.model.Exceptions.AnimalDiesException;
 import g54327.humbug.model.Game;
+import g54327.humbug.model.LevelStatus;
 import g54327.humbug.model.Model;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
@@ -28,13 +29,13 @@ import g54327.humbug.view.text.InterfaceView;
 
 /**
  * @author Andrew SASSOYE
- * @version 1.0.0
+ * @version 1.1.0
  * @since 0.2.0
  */
 public class Controller {
     private Model game;
 
-    private InterfaceView view;
+    private final InterfaceView view;
 
     /**
      * Controller constructor
@@ -51,10 +52,19 @@ public class Controller {
      * Start the game
      */
     public void startGame() {
-        this.game = new Game();
-        this.game.startLevel(1);
+        this.startGame(1);
+    }
 
-        while (!this.game.levelIsOver()) {
+    /**
+     * Start the game
+     *
+     * @since 1.1.0
+     */
+    public void startGame(int nLevel) {
+        this.game = new Game();
+        this.game.startLevel(nLevel);
+
+        while (this.game.getLevelStatus() == LevelStatus.IN_PROGRESS) {
             this.display();
             Position position = this.view.askPosition();
             Direction direction = this.view.askDirection();
@@ -67,8 +77,9 @@ public class Controller {
             }
         }
 
-        if (this.game.levelIsOver()) {
+        if (this.game.getLevelStatus() == LevelStatus.WIN) {
             this.view.displayMessage("LEVEL COMPLETED");
+            this.startGame(nLevel + 1);
         }
 
     }

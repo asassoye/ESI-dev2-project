@@ -30,7 +30,7 @@ import g54327.humbug.model.Structures.Direction;
  * @since 0.1.0
  */
 public class Square {
-    private SquareType squareType;
+    private final SquareType squareType;
 
     private boolean northWall;
     private boolean southWall;
@@ -43,7 +43,24 @@ public class Square {
      * @param squareType Square is grass or star
      */
     public Square(SquareType squareType) {
+        this(squareType, false, false, false, false);
+    }
+
+    /**
+     * Constructor of Square on board.
+     *
+     * @param squareType Square is grass or star
+     * @param northWall  add north wall
+     * @param southWall  add south wall
+     * @param westWall   add west wall
+     * @param eastWall   add east wall
+     */
+    public Square(SquareType squareType, boolean northWall, boolean southWall, boolean westWall, boolean eastWall) {
         this.squareType = squareType;
+        this.northWall = northWall;
+        this.southWall = southWall;
+        this.westWall = westWall;
+        this.eastWall = eastWall;
     }
 
     /**

@@ -17,28 +17,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model.Exceptions;
+package g54327.humbug.model;
 
 /**
- * LevelNotStarted RuntimeException
+ * Level class
  *
  * @author Andrew SASSOYE
- * @version 1.0.1
- * @since 0.2.0
+ * @version 1.0.0
+ * @since 2.0.0
  */
-public class LevelNotStartedException extends IllegalStateException {
-    public LevelNotStartedException() {
-    }
-
-    public LevelNotStartedException(String s) {
-        super(s);
-    }
-
-    public LevelNotStartedException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public LevelNotStartedException(Throwable cause) {
-        super(cause);
-    }
+public enum LevelStatus {
+    NOT_STARTED,
+    IN_PROGRESS,
+    FAIL,
+    WIN
 }
