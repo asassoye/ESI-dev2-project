@@ -19,8 +19,11 @@
 
 package g54327.humbug.model;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import g54327.humbug.model.Animals.Animal;
 import g54327.humbug.model.Structures.Board;
+
+import java.io.IOException;
 
 /**
  * Level class
@@ -36,14 +39,29 @@ public class Level {
 
     private final int nMoves;
 
-    private Level(Board board, Animal[] animals, int nMoves) {
+    public Level() {
+        this(null, null, 0);
+    }
+
+    public Level(Board board, Animal[] animals, int nMoves) {
         this.board = board;
         this.animals = animals;
         this.nMoves = nMoves;
     }
 
     public static Level getLevel(int level) {
-        return null;
+        return readLevel(level);
+    }
+
+    private static Level readLevel(int level) {
+        var objectMapper = new ObjectMapper();
+        var inputStream = Level.class.getResourceAsStream(String.format("/data/level-%d.json", level));
+
+        try {
+            return objectMapper.readValue(inputStream, Level.class);
+        } catch (IOException e) {
+            return null;
+        }
     }
 
     /**
@@ -69,7 +87,7 @@ public class Level {
      *
      * @return this.nMoves
      */
-    public int getNMoves() {
+    public int getnMoves() {
         return nMoves;
     }
 }

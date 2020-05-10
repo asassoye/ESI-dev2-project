@@ -34,6 +34,10 @@ import g54327.humbug.model.Structures.Position;
  * @since 0.2.0
  */
 public class Snail extends Animal {
+    public Snail() {
+        this(new Position());
+    }
+
     /**
      * Snail constructor
      *

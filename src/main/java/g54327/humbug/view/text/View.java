@@ -73,7 +73,7 @@ public class View implements InterfaceView {
     }
 
     private static void printBoard(Board board, Animal... animals) {
-        Grid grid = new Grid(board.getNbColumn(), board.getNbRow(), 3, 1);
+        Grid grid = new Grid(board.getNbRow(), board.getNbColumn(), 3, 1);
         System.out.println();
 
         for (var i = 0; i < board.getNbRow(); ++i) {
@@ -135,12 +135,17 @@ public class View implements InterfaceView {
      */
     @Override
     public void displayBoard(Board board, Animal... animals) {
-        InterfaceView.clearScreen();
         System.out.println();
-        System.out.print("\t");
-        System.out.print("   ");
-
         printBoard(board, animals);
+        System.out.println();
+    }
+
+    /**
+     * Clean console screen
+     */
+    public void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     /**

@@ -1,0 +1,41 @@
+{
+  "board": {
+    "squares": [
+      [
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        },
+        null
+      ],
+      [
+        null,
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        }
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "STAR"
+        }
+      ]
+    ]
+  },
+  "animals": [
+    {
+      "type": "Snail",
+      "positionOnBoard": {
+        "row": 0,
+        "column": 0
+      }
+    }
+  ],
+  "nMoves": 4
+}

@@ -20,7 +20,6 @@
 package g54327.humbug.model;
 
 import g54327.humbug.model.Animals.Animal;
-import g54327.humbug.model.Animals.Snail;
 import g54327.humbug.model.Exceptions.AnimalDiesException;
 import g54327.humbug.model.Exceptions.LevelNotStartedException;
 import g54327.humbug.model.Structures.Board;
@@ -71,15 +70,12 @@ public class Game implements Model {
      * {@inheritDoc}
      */
     @Override
-    public void startLevel(int level) {
-        this.currentLevel = level;
-        switch (level) {
-            default:
-                this.board = Board.getInitialBoard();
-                this.animals = new Animal[]{
-                        new Snail(new Position(0, 0))
-                };
-        }
+    public void startLevel(int nlevel) {
+        Level level = Level.getLevel(nlevel);
+        this.currentLevel = nlevel;
+        this.animals = level.getAnimals();
+        this.board = level.getBoard();
+        this.remainingMoves = level.getnMoves();
     }
 
     /**
@@ -93,6 +89,9 @@ public class Game implements Model {
 
         for (var animal : animals) {
             if (!animal.isOnStar()) {
+                if (remainingMoves == 0) {
+                    return LevelStatus.FAIL;
+                }
                 return LevelStatus.IN_PROGRESS;
             }
         }
@@ -112,6 +111,7 @@ public class Game implements Model {
         for (var animal : animals) {
             if (animal.getPositionOnBoard().equals(position)) {
                 Position newPosition = animal.move(this.board, direction, this.animals);
+                remainingMoves--;
 
                 if (newPosition == null) {
                     throw new AnimalDiesException();

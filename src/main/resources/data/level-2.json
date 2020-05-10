@@ -1,0 +1,64 @@
+{
+  "board": {
+    "squares": [
+      [
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        },
+        null
+      ],
+      [
+        null,
+        {
+          "type": "STAR"
+        },
+        null
+      ],
+      [
+        {
+          "type": "STAR"
+        },
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "STAR"
+        }
+      ],
+      [
+        null,
+        {
+          "type": "GRASS"
+        },
+        null
+      ]
+    ]
+  },
+  "animals": [
+    {
+      "type": "Snail",
+      "positionOnBoard": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "type": "Snail",
+      "positionOnBoard": {
+        "row": 2,
+        "column": 1
+      }
+    },
+    {
+      "type": "Snail",
+      "positionOnBoard": {
+        "row": 3,
+        "column": 1
+      }
+    }
+  ],
+  "nMoves": 5
+}

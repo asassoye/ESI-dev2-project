@@ -38,6 +38,10 @@ import static g54327.humbug.model.Squares.SquareType.STAR;
 public class Board {
     private final Square[][] squares;
 
+    public Board() {
+        this(null);
+    }
+
     /**
      * Board constructor
      *
@@ -85,8 +89,8 @@ public class Board {
             return false;
         }
 
-        return this.squares[position.getRow()][position.getColumn()].getSquareType() == GRASS
-                || this.squares[position.getRow()][position.getColumn()].getSquareType() == STAR;
+        return this.squares[position.getRow()][position.getColumn()].getType() == GRASS
+                || this.squares[position.getRow()][position.getColumn()].getType() == STAR;
     }
 
     /**
@@ -96,7 +100,7 @@ public class Board {
      * @return SquareType at position
      */
     public SquareType getSquareType(Position position) {
-        return this.getSquare(position).getSquareType();
+        return this.getSquare(position).getType();
     }
 
     /**

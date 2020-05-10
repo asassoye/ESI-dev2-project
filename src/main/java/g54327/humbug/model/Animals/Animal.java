@@ -19,6 +19,8 @@
 
 package g54327.humbug.model.Animals;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
@@ -30,6 +32,14 @@ import g54327.humbug.model.Structures.Position;
  * @version 1.0.0
  * @since 0.2.0
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type"
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Snail.class),
+        @JsonSubTypes.Type(value = Spider.class)
+})
 public abstract class Animal {
 
     /**
@@ -41,6 +51,10 @@ public abstract class Animal {
      * Is on star (complete)
      */
     protected boolean onStar;
+
+    public Animal() {
+        this(new Position());
+    }
 
     /**
      * Animal constructor

@@ -46,6 +46,7 @@ public class Controller {
     public Controller(Model game, InterfaceView view) {
         this.game = game;
         this.view = view;
+        view.clearScreen();
     }
 
     /**
@@ -65,19 +66,31 @@ public class Controller {
         this.game.startLevel(nLevel);
 
         while (this.game.getLevelStatus() == LevelStatus.IN_PROGRESS) {
+            this.view.displayMessage(String.format("Level %d: %d moves left", nLevel, game.getRemainingMoves()));
             this.display();
             Position position = this.view.askPosition();
             Direction direction = this.view.askDirection();
 
             try {
+                view.clearScreen();
                 game.move(position, direction);
             } catch (AnimalDiesException e) {
-                view.displayError("Animal Died. GAME OVER");
+                view.clearScreen();
+                view.displayError("Animal Died. Try again");
+                this.startGame(nLevel);
                 break;
             }
         }
 
+        if (this.game.getLevelStatus() == LevelStatus.FAIL) {
+            view.clearScreen();
+            this.view.displayError("YOU FAILED! TRY AGAIN");
+            this.startGame(nLevel);
+
+        }
+
         if (this.game.getLevelStatus() == LevelStatus.WIN) {
+            view.clearScreen();
             this.view.displayMessage("LEVEL COMPLETED");
             this.startGame(nLevel + 1);
         }

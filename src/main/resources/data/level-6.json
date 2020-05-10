@@ -1,0 +1,78 @@
+{
+  "board": {
+    "squares": [
+      [
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS",
+          "eastWall": true
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "GRASS"
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "STAR"
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "STAR"
+        }
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "STAR",
+          "southWall": true
+        },
+        null
+      ]
+    ]
+  },
+  "animals": [
+    {
+      "type": "Spider",
+      "positionOnBoard": {
+        "row": 0,
+        "column": 0
+      }
+    },
+    {
+      "type": "Spider",
+      "positionOnBoard": {
+        "row": 1,
+        "column": 2
+      }
+    },
+    {
+      "type": "Snail",
+      "positionOnBoard": {
+        "row": 3,
+        "column": 2
+      }
+    }
+  ],
+  "nMoves": 4
+}

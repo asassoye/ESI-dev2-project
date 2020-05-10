@@ -30,33 +30,37 @@ import g54327.humbug.model.Structures.Direction;
  * @since 0.1.0
  */
 public class Square {
-    private final SquareType squareType;
+    private final SquareType type;
 
     private boolean northWall;
     private boolean southWall;
     private boolean westWall;
     private boolean eastWall;
 
-    /**
-     * Constructor of Square on board.
-     *
-     * @param squareType Square is grass or star
-     */
-    public Square(SquareType squareType) {
-        this(squareType, false, false, false, false);
+    public Square() {
+        this(SquareType.GRASS);
     }
 
     /**
      * Constructor of Square on board.
      *
-     * @param squareType Square is grass or star
-     * @param northWall  add north wall
-     * @param southWall  add south wall
-     * @param westWall   add west wall
-     * @param eastWall   add east wall
+     * @param type Square is grass or star
      */
-    public Square(SquareType squareType, boolean northWall, boolean southWall, boolean westWall, boolean eastWall) {
-        this.squareType = squareType;
+    public Square(SquareType type) {
+        this(type, false, false, false, false);
+    }
+
+    /**
+     * Constructor of Square on board.
+     *
+     * @param type      Square is grass or star
+     * @param northWall add north wall
+     * @param southWall add south wall
+     * @param westWall  add west wall
+     * @param eastWall  add east wall
+     */
+    public Square(SquareType type, boolean northWall, boolean southWall, boolean westWall, boolean eastWall) {
+        this.type = type;
         this.northWall = northWall;
         this.southWall = southWall;
         this.westWall = westWall;
@@ -68,8 +72,8 @@ public class Square {
      *
      * @return type of Square
      */
-    public SquareType getSquareType() {
-        return squareType;
+    public SquareType getType() {
+        return type;
     }
 
     /**

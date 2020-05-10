@@ -33,6 +33,11 @@ public class Position {
 
     private final int column;
 
+    public Position() {
+        this.row = 0;
+        this.column = 0;
+    }
+
     /**
      * Constructor
      *
