@@ -67,6 +67,14 @@ public class Spider extends Animal {
         try {
             board.getSquareType(nextPosition);
         } catch (PositionOutOfBoundException | NullSquareException e) {
+            if (board.getSquare(this.positionOnBoard).hasWall(direction)
+            ) {
+                if (board.getSquareType(positionOnBoard) == SquareType.STAR) {
+                    this.onStar = true;
+                    board.setSquareType(positionOnBoard, SquareType.GRASS);
+                }
+                return this.positionOnBoard;
+            }
             this.positionOnBoard = null;
             return null;
         }
@@ -78,7 +86,7 @@ public class Spider extends Animal {
         }
 
         for (Animal animal : animals) {
-            if (animal.getPositionOnBoard().equals(nextPosition)) {
+            if (!animal.isOnStar() && animal.getPositionOnBoard().equals(nextPosition)) {
                 if (board.getSquareType(positionOnBoard) == SquareType.STAR) {
                     this.onStar = true;
                     board.setSquareType(positionOnBoard, SquareType.GRASS);
