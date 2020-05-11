@@ -23,8 +23,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import g54327.humbug.model.Animals.Animal;
 import g54327.humbug.model.Structures.Board;
 
-import java.io.IOException;
-
 /**
  * Level class
  *
@@ -59,7 +57,7 @@ public class Level {
 
         try {
             return objectMapper.readValue(inputStream, Level.class);
-        } catch (IOException e) {
+        } catch (Exception e) {
             return null;
         }
     }

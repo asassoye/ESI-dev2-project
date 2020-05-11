@@ -17,36 +17,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug;
-
-import g54327.humbug.controller.Controller;
-import g54327.humbug.model.Game;
-import g54327.humbug.model.Model;
-import g54327.humbug.view.text.InterfaceView;
-import g54327.humbug.view.text.View;
+package g54327.humbug.model.Exceptions;
 
 /**
- * Main
+ * NoLevelLeftException RuntimeException
  *
  * @author Andrew SASSOYE
- * @version 1.1.0
+ * @version 1.0.0
+ * @since 2.0.0
  */
-public class Main {
-    /**
-     * Main method
-     *
-     * @param args Execution arguments
-     */
-    public static void main(String[] args) {
-        Model model = new Game();
-        InterfaceView view = new View();
-        Controller controller = new Controller(model, view);
+public class NoLevelLeftException extends RuntimeException {
 
-        if (args.length == 1) {
-            int level = Integer.parseInt(args[0]);
-            controller.startGame(level);
-        } else {
-            controller.startGame();
-        }
-    }
 }

@@ -20,6 +20,7 @@
 package g54327.humbug.controller;
 
 import g54327.humbug.model.Exceptions.AnimalDiesException;
+import g54327.humbug.model.Exceptions.NoLevelLeftException;
 import g54327.humbug.model.Game;
 import g54327.humbug.model.LevelStatus;
 import g54327.humbug.model.Model;
@@ -63,7 +64,12 @@ public class Controller {
      */
     public void startGame(int nLevel) {
         this.game = new Game();
-        this.game.startLevel(nLevel);
+        try {
+            this.game.startLevel(nLevel);
+        } catch (NoLevelLeftException e) {
+            this.view.displayMessage("GAME COMPLETED");
+            return;
+        }
 
         while (this.game.getLevelStatus() == LevelStatus.IN_PROGRESS) {
             this.view.displayMessage(String.format("Level %d: %d moves left", nLevel, game.getRemainingMoves()));
@@ -94,7 +100,6 @@ public class Controller {
             this.view.displayMessage("LEVEL COMPLETED");
             this.startGame(nLevel + 1);
         }
-
     }
 
     /**

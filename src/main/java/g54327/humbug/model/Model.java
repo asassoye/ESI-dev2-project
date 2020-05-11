@@ -57,7 +57,7 @@ public interface Model {
     /**
      * Start a given level
      *
-     * @param level Level to start
+     * @param level Level to start.
      */
     void startLevel(int level);
 
