@@ -44,9 +44,9 @@ public enum Direction {
      */
     WEST(0, -1);
 
-    private int deltaRow;
+    private final int deltaRow;
 
-    private int deltaColumn;
+    private final int deltaColumn;
 
     /**
      * Constructor

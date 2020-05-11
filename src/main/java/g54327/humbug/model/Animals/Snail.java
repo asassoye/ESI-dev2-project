@@ -33,8 +33,11 @@ import g54327.humbug.model.Structures.Position;
  * @since 0.2.0
  */
 public class Snail extends Animal implements Terrestrial {
+    /**
+     * Snail constructor
+     */
     public Snail() {
-        this(new Position());
+        super();
     }
 
     /**
@@ -49,11 +52,11 @@ public class Snail extends Animal implements Terrestrial {
     /**
      * Snail toString for View
      *
-     * @return " SN "
+     * @return Snail
      */
     @Override
     public String toString() {
-        return "SNAIL";
+        return "Snail";
     }
 
     /**

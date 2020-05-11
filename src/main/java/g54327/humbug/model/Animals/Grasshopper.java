@@ -25,6 +25,13 @@ import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
+/**
+ * Grasshopper Class
+ *
+ * @author Andrew SASSOYE
+ * @version 2.0.0
+ * @since 0.2.0
+ */
 public class Grasshopper extends Animal implements Aerial {
     public Grasshopper() {
         super();
@@ -34,11 +41,19 @@ public class Grasshopper extends Animal implements Aerial {
         super(positionOnBoard);
     }
 
+    /**
+     * Grasshopper toString for View
+     *
+     * @return Grasshopper
+     */
     @Override
     public String toString() {
         return "Grasshopper";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
         this.positionOnBoard = step(this.positionOnBoard, direction, 1, board, animals);

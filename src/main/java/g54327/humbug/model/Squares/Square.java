@@ -37,6 +37,9 @@ public class Square {
     private boolean westWall;
     private boolean eastWall;
 
+    /**
+     * Constructor
+     */
     public Square() {
         this(SquareType.GRASS);
     }
@@ -109,7 +112,7 @@ public class Square {
     }
 
     /**
-     * this.nortWall setter
+     * this.northWall setter
      *
      * @param northWall New northWall value
      * @since 2.0.0

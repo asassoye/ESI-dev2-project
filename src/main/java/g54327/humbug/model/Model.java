@@ -20,6 +20,7 @@
 package g54327.humbug.model;
 
 import g54327.humbug.model.Animals.Animal;
+import g54327.humbug.model.Levels.LevelStatus;
 import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;

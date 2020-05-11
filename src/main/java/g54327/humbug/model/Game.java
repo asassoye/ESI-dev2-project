@@ -23,6 +23,8 @@ import g54327.humbug.model.Animals.Animal;
 import g54327.humbug.model.Exceptions.AnimalDiesException;
 import g54327.humbug.model.Exceptions.LevelNotStartedException;
 import g54327.humbug.model.Exceptions.NoLevelLeftException;
+import g54327.humbug.model.Levels.Level;
+import g54327.humbug.model.Levels.LevelStatus;
 import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;

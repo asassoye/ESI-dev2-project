@@ -26,7 +26,26 @@ import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
+/**
+ * Terrestrial interface
+ *
+ * @author Andrew SASSOYE
+ * @version 1.0.0
+ * @since 2.0.0
+ */
 public interface Terrestrial {
+    /**
+     * Returns next position after move. If Animal is present at destination or if a wall is present
+     * the animal stops moving
+     *
+     * @param actualPosition Actual animal position
+     * @param direction Direction of move
+     * @param nSquares number of Squares to move
+     * @param board Board
+     * @param animals Animals
+     *
+     * @return Next position of the Animal
+     */
     default Position step(Position actualPosition, Direction direction, int nSquares, Board board, Animal[] animals) {
         if (actualPosition == null) {
             throw new IllegalArgumentException();

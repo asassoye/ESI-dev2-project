@@ -33,6 +33,9 @@ public class Position {
 
     private final int column;
 
+    /**
+     * Constructor
+     */
     public Position() {
         this.row = 0;
         this.column = 0;

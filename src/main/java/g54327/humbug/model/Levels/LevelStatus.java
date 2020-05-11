@@ -17,7 +17,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model;
+package g54327.humbug.model.Levels;
 
 /**
  * Level class
@@ -27,8 +27,20 @@ package g54327.humbug.model;
  * @since 2.0.0
  */
 public enum LevelStatus {
+    /**
+     * Level not started
+     */
     NOT_STARTED,
+    /**
+     * Level in progress
+     */
     IN_PROGRESS,
+    /**
+     * Level failed
+     */
     FAIL,
+    /**
+     * Level won
+     */
     WIN
 }

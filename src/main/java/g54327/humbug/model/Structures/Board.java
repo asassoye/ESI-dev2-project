@@ -38,8 +38,11 @@ import static g54327.humbug.model.Squares.SquareType.STAR;
 public class Board {
     private final Square[][] squares;
 
+    /**
+     * Board constructor
+     */
     public Board() {
-        this(null);
+        this(new Square[0][0]);
     }
 
     /**
@@ -56,7 +59,7 @@ public class Board {
      *
      * @return initial Board
      */
-    public static Board getInitialBoard() {
+    static Board getInitialBoard() {
         Square[][] squares = {
                 {new Square(GRASS), new Square(GRASS), null},
                 {null, new Square(GRASS), new Square(GRASS)},

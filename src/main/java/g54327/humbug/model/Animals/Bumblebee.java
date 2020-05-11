@@ -26,20 +26,35 @@ import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
 public class Bumblebee extends Animal implements Aerial {
-
+    /**
+     * Bumblebee constructor
+     */
     public Bumblebee() {
         super();
     }
 
+    /**
+     * Bumblebee constructor
+     *
+     * @param positionOnBoard initial position on Board
+     */
     public Bumblebee(Position positionOnBoard) {
         super(positionOnBoard);
     }
 
+    /**
+     * Bumblebee toString for View
+     *
+     * @return Bumblebee
+     */
     @Override
     public String toString() {
         return "Bumblebee";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
         this.positionOnBoard = step(this.positionOnBoard, direction, 2, board, animals);

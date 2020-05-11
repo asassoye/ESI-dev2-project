@@ -22,7 +22,7 @@ package g54327.humbug.controller;
 import g54327.humbug.model.Exceptions.AnimalDiesException;
 import g54327.humbug.model.Exceptions.NoLevelLeftException;
 import g54327.humbug.model.Game;
-import g54327.humbug.model.LevelStatus;
+import g54327.humbug.model.Levels.LevelStatus;
 import g54327.humbug.model.Model;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
@@ -59,6 +59,8 @@ public class Controller {
 
     /**
      * Start the game
+     *
+     * @param nLevel number of Level
      *
      * @since 1.1.0
      */

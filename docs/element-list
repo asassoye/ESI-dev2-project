@@ -2,7 +2,9 @@ g54327.humbug
 g54327.humbug.controller
 g54327.humbug.model
 g54327.humbug.model.Animals
+g54327.humbug.model.Animals.Type
 g54327.humbug.model.Exceptions
+g54327.humbug.model.Levels
 g54327.humbug.model.Squares
 g54327.humbug.model.Structures
 g54327.humbug.view.text

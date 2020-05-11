@@ -6,47 +6,78 @@
 
 ![Humbug](.github/humbug.png)
 
+## How to play
+![Levels](.github/levels.gif)
+
+
 ## Structure du projet
 ```
 .
 ├── src
 │   ├── main
-│   │   └── java
-│   │       └── g54327
-│   │           ├── humbug
-│   │           │   ├── controller
-│   │           │   │   └── Controller.java
-│   │           │   ├── model
-│   │           │   │   ├── Animals
-│   │           │   │   │   ├── Animal.java
-│   │           │   │   │   ├── Snail.java
-│   │           │   │   │   └── Spider.java
-│   │           │   │   ├── Exceptions
-│   │           │   │   │   ├── AnimalDiesException.java
-│   │           │   │   │   ├── LevelNotStartedException.java
-│   │           │   │   │   ├── NullPositionException.java
-│   │           │   │   │   ├── NullSquareException.java
-│   │           │   │   │   └── PositionOutOfBoundException.java
-│   │           │   │   ├── Squares
-│   │           │   │   │   ├── Square.java
-│   │           │   │   │   └── SquareType.java
-│   │           │   │   ├── Structures
-│   │           │   │   │   ├── Board.java
-│   │           │   │   │   ├── Direction.java
-│   │           │   │   │   └── Position.java
-│   │           │   │   ├── Game.java
-│   │           │   │   └── Model.java
-│   │           │   ├── view
-│   │           │   │   └── text
-│   │           │   │       ├── InterfaceView.java
-│   │           │   │       └── View.java
-│   │           │   └── Main.java
-│   │           └── utils
-│   │               └── RobustScanner.java
+│   │   ├── java
+│   │   │   └── g54327
+│   │   │       ├── humbug
+│   │   │       │   ├── controller
+│   │   │       │   │   └── Controller.java
+│   │   │       │   ├── model
+│   │   │       │   │   ├── Animals
+│   │   │       │   │   │   ├── Type
+│   │   │       │   │   │   │   ├── Aerial.java
+│   │   │       │   │   │   │   └── Terrestrial.java
+│   │   │       │   │   │   ├── Animal.java
+│   │   │       │   │   │   ├── Bumblebee.java
+│   │   │       │   │   │   ├── Butterfly.java
+│   │   │       │   │   │   ├── Grasshopper.java
+│   │   │       │   │   │   ├── Ladybird.java
+│   │   │       │   │   │   ├── Snail.java
+│   │   │       │   │   │   └── Spider.java
+│   │   │       │   │   ├── Exceptions
+│   │   │       │   │   │   ├── AnimalDiesException.java
+│   │   │       │   │   │   ├── LevelNotStartedException.java
+│   │   │       │   │   │   ├── NoLevelLeftException.java
+│   │   │       │   │   │   ├── NullPositionException.java
+│   │   │       │   │   │   ├── NullSquareException.java
+│   │   │       │   │   │   └── PositionOutOfBoundException.java
+│   │   │       │   │   ├── Levels
+│   │   │       │   │   │   ├── Level.java
+│   │   │       │   │   │   └── LevelStatus.java
+│   │   │       │   │   ├── Squares
+│   │   │       │   │   │   ├── Square.java
+│   │   │       │   │   │   └── SquareType.java
+│   │   │       │   │   ├── Structures
+│   │   │       │   │   │   ├── Board.java
+│   │   │       │   │   │   ├── Direction.java
+│   │   │       │   │   │   └── Position.java
+│   │   │       │   │   ├── Game.java
+│   │   │       │   │   └── Model.java
+│   │   │       │   ├── view
+│   │   │       │   │   └── text
+│   │   │       │   │       ├── Grid.java
+│   │   │       │   │       ├── InterfaceView.java
+│   │   │       │   │       └── View.java
+│   │   │       │   └── Main.java
+│   │   │       └── utils
+│   │   │           └── RobustScanner.java
+│   │   └── resources
+│   │       └── data
+│   │           ├── level-1.json
+│   │           ├── ...
+│   │           ├── level-47.json
+│   │           ├── level-69.json
+│   │           └── level-100.json
 │   └── test
 │       └── java
 │           ├── g54327
 │           │   └── humbug
+│           │       ├── model
+│           │       │   └── Animals
+│           │       │       ├── BumblebeeTest.java
+│           │       │       ├── ButterflyTest.java
+│           │       │       ├── GrasshopperTest.java
+│           │       │       ├── LadybirdTest.java
+│           │       │       ├── SnailTest.java
+│           │       │       └── SpiderTest.java
 │           │       └── MainTest.java
 │           └── pbt
 │               └── humbug
@@ -66,6 +97,7 @@
 ├── pom.xml
 └── README.md
 ```
+
 ## Documentation
 Vérifiez la documentation [ici](https://asassoye.github.io/ESI-dev2-project/index.html)
 
@@ -85,7 +117,7 @@ mvn package
 
 Puis executez:
 ```
-java -jar target/humbug-1.0.0.jar
+java -jar target/humbug-2.0.0.jar
 ```
 
 ## Tests

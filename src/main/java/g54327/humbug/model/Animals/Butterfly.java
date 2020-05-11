@@ -25,20 +25,43 @@ import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
+/**
+ * Butterfly Class
+ *
+ * @author Andrew SASSOYE
+ * @version 2.0.0
+ * @since 0.2.0
+ */
 public class Butterfly extends Animal implements Aerial {
+    /**
+     * Butterfly constructor
+     */
     public Butterfly() {
         super();
     }
 
+    /**
+     * Butterfly constructor
+     *
+     * @param positionOnBoard initial position on Board
+     */
     public Butterfly(Position positionOnBoard) {
         super(positionOnBoard);
     }
 
+    /**
+     * Butterfly toString for View
+     *
+     * @return Snail
+     */
     @Override
     public String toString() {
         return "Butterfly";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
         this.positionOnBoard = step(this.positionOnBoard, direction, 3, board, animals);

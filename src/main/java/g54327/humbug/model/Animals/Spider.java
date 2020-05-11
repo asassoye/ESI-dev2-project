@@ -49,11 +49,11 @@ public class Spider extends Animal implements Terrestrial {
     /**
      * toString of Spider for View
      *
-     * @return " SP "
+     * @return "Spider"
      */
     @Override
     public String toString() {
-        return "SPIDER";
+        return "Spider";
     }
 
     /**

@@ -17,7 +17,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model;
+package g54327.humbug.model.Levels;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import g54327.humbug.model.Animals.Animal;
@@ -37,16 +37,33 @@ public class Level {
 
     private final int nMoves;
 
+    /**
+     * Level constructor
+     */
     public Level() {
         this(null, null, 0);
     }
 
+    /**
+     * Level constructor
+     *
+     * @param board Board
+     * @param animals List of Animals
+     * @param nMoves number of permitted moves
+     */
     public Level(Board board, Animal[] animals, int nMoves) {
         this.board = board;
         this.animals = animals;
         this.nMoves = nMoves;
     }
 
+    /**
+     * Get specific level
+     *
+     * @param level level number
+     *
+     * @return asked Level
+     */
     public static Level getLevel(int level) {
         return readLevel(level);
     }

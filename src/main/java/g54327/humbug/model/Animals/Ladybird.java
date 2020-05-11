@@ -25,13 +25,20 @@ import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
+/**
+ * Ladybird Class
+ *
+ * @author Andrew SASSOYE
+ * @version 2.0.0
+ * @since 0.2.0
+ */
 public class Ladybird extends Animal implements Terrestrial {
     public Ladybird() {
         this(new Position());
     }
 
     /**
-     * Spider constructor
+     * Ladybird constructor
      *
      * @param positionOnBoard initial position on Board
      */
@@ -40,9 +47,9 @@ public class Ladybird extends Animal implements Terrestrial {
     }
 
     /**
-     * toString of Spider for View
+     * toString of Ladybird for View
      *
-     * @return " SP "
+     * @return Ladybird
      */
     @Override
     public String toString() {

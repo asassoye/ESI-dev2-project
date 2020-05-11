@@ -33,7 +33,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Snail Tests
+ * Spider Tests
  *
  * @author Andrew SASSOYE
  * @version 1.0.0

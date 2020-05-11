@@ -1,26 +1,20 @@
 /*
- * Copyright (c) 2013, 2018, Oracle and/or its affiliates. All rights reserved.
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ * Copyright (C) 2020 Andrew SASSOYE
  *
- * This code is free software; you can redistribute it and/or modify it
- * under the terms of the GNU General Public License version 2 only, as
- * published by the Free Software Foundation.  Oracle designates this
- * particular file as subject to the "Classpath" exception as provided
- * by Oracle in the LICENSE file that accompanied this code.
+ * Permission is hereby granted, free of charge,
+ * to any person obtaining a copy of this software and associated documentation files (the “Software”),
+ * to deal in the Software without restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
- * This code is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
- * version 2 for more details (a copy is included in the LICENSE file that
- * accompanied this code).
+ * The above copyright notice and this permission notice shall be included in all copies or
+ * substantial portions of the Software.
  *
- * You should have received a copy of the GNU General Public License version
- * 2 along with this work; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
- * or visit www.oracle.com if you need additional information or have any
- * questions.
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 var moduleSearchIndex;
@@ -32,51 +26,51 @@ function loadScripts(doc, tag) {
     createElem(doc, tag, 'jquery/jszip/dist/jszip.js');
     createElem(doc, tag, 'jquery/jszip-utils/dist/jszip-utils.js');
     if (window.navigator.userAgent.indexOf('MSIE ') > 0 || window.navigator.userAgent.indexOf('Trident/') > 0 ||
-        window.navigator.userAgent.indexOf('Edge/') > 0) {
+            window.navigator.userAgent.indexOf('Edge/') > 0) {
         createElem(doc, tag, 'jquery/jszip-utils/dist/jszip-utils-ie.js');
     }
     createElem(doc, tag, 'search.js');
-
+    
     $.get(pathtoroot + "module-search-index.zip")
-        .done(function () {
-            JSZipUtils.getBinaryContent(pathtoroot + "module-search-index.zip", function (e, data) {
-                var zip = new JSZip(data);
-                zip.load(data);
-                moduleSearchIndex = JSON.parse(zip.file("module-search-index.json").asText());
+            .done(function() {
+                JSZipUtils.getBinaryContent(pathtoroot + "module-search-index.zip", function(e, data) {
+                    var zip = new JSZip(data);
+                    zip.load(data);
+                    moduleSearchIndex = JSON.parse(zip.file("module-search-index.json").asText());
+                });
             });
-        });
     $.get(pathtoroot + "package-search-index.zip")
-        .done(function () {
-            JSZipUtils.getBinaryContent(pathtoroot + "package-search-index.zip", function (e, data) {
-                var zip = new JSZip(data);
-                zip.load(data);
-                packageSearchIndex = JSON.parse(zip.file("package-search-index.json").asText());
+            .done(function() {
+                JSZipUtils.getBinaryContent(pathtoroot + "package-search-index.zip", function(e, data) {
+                    var zip = new JSZip(data);
+                    zip.load(data);
+                    packageSearchIndex = JSON.parse(zip.file("package-search-index.json").asText());
+                });
             });
-        });
     $.get(pathtoroot + "type-search-index.zip")
-        .done(function () {
-            JSZipUtils.getBinaryContent(pathtoroot + "type-search-index.zip", function (e, data) {
-                var zip = new JSZip(data);
-                zip.load(data);
-                typeSearchIndex = JSON.parse(zip.file("type-search-index.json").asText());
+            .done(function() {
+                JSZipUtils.getBinaryContent(pathtoroot + "type-search-index.zip", function(e, data) {
+                    var zip = new JSZip(data);
+                    zip.load(data);
+                    typeSearchIndex = JSON.parse(zip.file("type-search-index.json").asText());
+                });
             });
-        });
     $.get(pathtoroot + "member-search-index.zip")
-        .done(function () {
-            JSZipUtils.getBinaryContent(pathtoroot + "member-search-index.zip", function (e, data) {
-                var zip = new JSZip(data);
-                zip.load(data);
-                memberSearchIndex = JSON.parse(zip.file("member-search-index.json").asText());
+            .done(function() {
+                JSZipUtils.getBinaryContent(pathtoroot + "member-search-index.zip", function(e, data) {
+                    var zip = new JSZip(data);
+                    zip.load(data);
+                    memberSearchIndex = JSON.parse(zip.file("member-search-index.json").asText());
+                });
             });
-        });
     $.get(pathtoroot + "tag-search-index.zip")
-        .done(function () {
-            JSZipUtils.getBinaryContent(pathtoroot + "tag-search-index.zip", function (e, data) {
-                var zip = new JSZip(data);
-                zip.load(data);
-                tagSearchIndex = JSON.parse(zip.file("tag-search-index.json").asText());
+            .done(function() {
+                JSZipUtils.getBinaryContent(pathtoroot + "tag-search-index.zip", function(e, data) {
+                    var zip = new JSZip(data);
+                    zip.load(data);
+                    tagSearchIndex = JSON.parse(zip.file("tag-search-index.json").asText());
+                });
             });
-        });
     if (!moduleSearchIndex) {
         createElem(doc, tag, 'module-search-index.js');
     }
@@ -92,7 +86,7 @@ function loadScripts(doc, tag) {
     if (!tagSearchIndex) {
         createElem(doc, tag, 'tag-search-index.js');
     }
-    $(window).resize(function () {
+    $(window).resize(function() {
         $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
     });
 }
@@ -108,10 +102,11 @@ function show(type) {
     count = 0;
     for (var key in data) {
         var row = document.getElementById(key);
-        if ((data[key] & type) !== 0) {
+        if ((data[key] &  type) !== 0) {
             row.style.display = '';
             row.className = (count++ % 2) ? rowColor : altColor;
-        } else
+        }
+        else
             row.style.display = 'none';
     }
     updateTabs(type);
@@ -124,9 +119,10 @@ function updateTabs(type) {
         if (value == type) {
             sNode.className = activeTableTab;
             spanNode.innerHTML = tabs[value][1];
-        } else {
+        }
+        else {
             sNode.className = tableTab;
-            spanNode.innerHTML = "<a href=\"javascript:show(" + value + ");\">" + tabs[value][1] + "</a>";
+            spanNode.innerHTML = "<a href=\"javascript:show("+ value + ");\">" + tabs[value][1] + "</a>";
         }
     }
 }

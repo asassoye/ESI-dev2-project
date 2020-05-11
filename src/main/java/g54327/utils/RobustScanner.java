@@ -31,7 +31,7 @@ import java.util.regex.Pattern;
  * @since 0.2.0
  */
 public final class RobustScanner {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     /**
      * Ask int (robust)
