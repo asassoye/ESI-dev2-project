@@ -174,7 +174,9 @@ public class Grid {
         if (wall) {
             this.grid[positionY][positionX] = VERTICAL_DOUBLE_BAR;
         } else {
-            this.grid[positionY][positionX] = VERTICAL_BAR;
+            if (this.grid[positionY][positionX] != VERTICAL_DOUBLE_BAR) {
+                this.grid[positionY][positionX] = VERTICAL_BAR;
+            }
         }
     }
 
@@ -194,7 +196,9 @@ public class Grid {
         }
 
         for (var i = 0; i < padding * 2 + contentLength; ++i) {
-            this.grid[positionY][positionX + i] = bar;
+            if (this.grid[positionY][positionX + i] != HORIZONTAL_DOUBLE_BAR) {
+                this.grid[positionY][positionX + i] = bar;
+            }
         }
     }
 
@@ -209,7 +213,9 @@ public class Grid {
         if (wall) {
             this.grid[positionY][positionX] = VERTICAL_DOUBLE_BAR;
         } else {
-            this.grid[positionY][positionX] = VERTICAL_BAR;
+            if (this.grid[positionY][positionX] != VERTICAL_DOUBLE_BAR) {
+                this.grid[positionY][positionX] = VERTICAL_BAR;
+            }
         }
     }
 
@@ -229,7 +235,9 @@ public class Grid {
         }
 
         for (var i = 0; i < padding * 2 + contentLength; ++i) {
-            this.grid[positionY][positionX + i] = bar;
+            if (this.grid[positionY][positionX + i] != HORIZONTAL_DOUBLE_BAR) {
+                this.grid[positionY][positionX + i] = bar;
+            }
         }
     }
 
