@@ -80,6 +80,10 @@ public class Position {
     }
 
     public Position next(Direction direction) {
+        if (direction == null) {
+            throw new IllegalArgumentException();
+        }
+
         return new Position(this.row + direction.getDeltaRow(), this.column + direction.getDeltaColumn());
     }
 

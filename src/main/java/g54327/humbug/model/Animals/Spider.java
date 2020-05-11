@@ -19,8 +19,7 @@
 
 package g54327.humbug.model.Animals;
 
-import g54327.humbug.model.Exceptions.NullSquareException;
-import g54327.humbug.model.Exceptions.PositionOutOfBoundException;
+import g54327.humbug.model.Animals.Type.Terrestrial;
 import g54327.humbug.model.Squares.SquareType;
 import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
@@ -33,7 +32,7 @@ import g54327.humbug.model.Structures.Position;
  * @version 2.0.0
  * @since 0.2.0
  */
-public class Spider extends Animal {
+public class Spider extends Animal implements Terrestrial {
     public Spider() {
         this(new Position());
     }
@@ -62,40 +61,13 @@ public class Spider extends Animal {
      */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
-        Position nextPosition = positionOnBoard.next(direction);
+        this.positionOnBoard = step(this.positionOnBoard, direction, Integer.MAX_VALUE, board, animals);
 
-        try {
-            board.getSquareType(nextPosition);
-        } catch (PositionOutOfBoundException | NullSquareException e) {
-            if (board.getSquare(this.positionOnBoard).hasWall(direction)
-            ) {
-                if (board.getSquareType(positionOnBoard) == SquareType.STAR) {
-                    this.onStar = true;
-                    board.setSquareType(positionOnBoard, SquareType.GRASS);
-                }
-                return this.positionOnBoard;
-            }
-            this.positionOnBoard = null;
-            return null;
+        if (this.positionOnBoard != null && board.getSquareType(positionOnBoard) == SquareType.STAR) {
+            this.onStar = true;
+            board.setSquareType(positionOnBoard, SquareType.GRASS);
         }
 
-        if (board.getSquare(this.positionOnBoard).hasWall(direction)
-                || board.getSquare(nextPosition).hasWall(direction.opposite())
-        ) {
-            return this.positionOnBoard;
-        }
-
-        for (Animal animal : animals) {
-            if (!animal.isOnStar() && animal.getPositionOnBoard().equals(nextPosition)) {
-                if (board.getSquareType(positionOnBoard) == SquareType.STAR) {
-                    this.onStar = true;
-                    board.setSquareType(positionOnBoard, SquareType.GRASS);
-                }
-                return this.positionOnBoard;
-            }
-        }
-
-        this.positionOnBoard = nextPosition;
-        return this.move(board, direction, animals);
+        return this.positionOnBoard;
     }
 }

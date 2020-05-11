@@ -3,32 +3,18 @@
     "squares": [
       [
         null,
+        null,
+        {
+          "type": "GRASS"
+        },
         {
           "type": "STAR"
         },
-        {
-          "type": "GRASS"
-        },
-        {
-          "type": "GRASS"
-        },
-        null,
         null
       ],
       [
         null,
         null,
-        null,
-        {
-          "type": "STAR"
-        },
-        null,
-        null
-      ],
-      [
-        {
-          "type": "GRASS"
-        },
         {
           "type": "GRASS"
         },
@@ -37,40 +23,38 @@
           "northWall": true
         },
         {
-          "type": "STAR"
-        },
-        null,
-        null
+          "type": "GRASS",
+          "northWall": true
+        }
       ],
       [
-        null,
         {
           "type": "GRASS"
         },
         {
-          "type": "GRASS",
-          "southWall": true
-        },
-        {
-          "type": "GRASS"
+          "type": "STAR"
         },
         {
           "type": "GRASS"
         },
         {
-          "type": "STAR",
-          "eastWall": true
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
         }
       ],
       [
         null,
+        null,
+        null,
         {
-          "type": "GRASS"
+          "type": "GRASS",
+          "northWall": true
         },
-        null,
-        null,
-        null,
-        null
+        {
+          "type": "STAR"
+        }
       ]
     ]
   },
@@ -78,31 +62,24 @@
     {
       "type": "Ladybird",
       "positionOnBoard": {
-        "row": 2,
-        "column": 0
-      }
-    },
-    {
-      "type": "Bumblebee",
-      "positionOnBoard": {
-        "row": 2,
+        "row": 0,
         "column": 2
       }
     },
     {
       "type": "Spider",
       "positionOnBoard": {
-        "row": 3,
+        "row": 2,
         "column": 3
       }
     },
     {
-      "type": "Spider",
+      "type": "Bumblebee",
       "positionOnBoard": {
-        "row": 4,
-        "column": 1
+        "row": 3,
+        "column": 3
       }
     }
   ],
-  "nMoves": 12
+  "nMoves": 10
 }

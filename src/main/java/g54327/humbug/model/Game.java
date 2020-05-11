@@ -109,13 +109,14 @@ public class Game implements Model {
         }
 
         for (var animal : animals) {
-            if (animal.getPositionOnBoard().equals(position)) {
+            if (!animal.isOnStar() && animal.getPositionOnBoard().equals(position)) {
                 Position newPosition = animal.move(this.board, direction, this.animals);
                 remainingMoves--;
 
                 if (newPosition == null) {
                     throw new AnimalDiesException();
                 }
+                break;
             }
         }
     }

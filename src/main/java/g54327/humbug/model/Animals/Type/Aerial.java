@@ -17,57 +17,48 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package g54327.humbug.model.Animals;
+package g54327.humbug.model.Animals.Type;
 
-import g54327.humbug.model.Animals.Type.Terrestrial;
-import g54327.humbug.model.Squares.SquareType;
+import g54327.humbug.model.Animals.Animal;
+import g54327.humbug.model.Exceptions.NullSquareException;
+import g54327.humbug.model.Exceptions.PositionOutOfBoundException;
 import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
-/**
- * Snail Class
- *
- * @author Andrew SASSOYE
- * @version 2.0.0
- * @since 0.2.0
- */
-public class Snail extends Animal implements Terrestrial {
-    public Snail() {
-        this(new Position());
-    }
-
-    /**
-     * Snail constructor
-     *
-     * @param positionOnBoard initial position on Board
-     */
-    public Snail(Position positionOnBoard) {
-        super(positionOnBoard);
-    }
-
-    /**
-     * Snail toString for View
-     *
-     * @return " SN "
-     */
-    @Override
-    public String toString() {
-        return "SNAIL";
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Position move(Board board, Direction direction, Animal[] animals) {
-        this.positionOnBoard = step(this.positionOnBoard, direction, 1, board, animals);
-
-        if (this.positionOnBoard != null && board.getSquareType(positionOnBoard) == SquareType.STAR) {
-            this.onStar = true;
-            board.setSquareType(positionOnBoard, SquareType.GRASS);
+public interface Aerial {
+    default Position step(Position actualPosition, Direction direction, int nSquares, Board board, Animal[] animals) {
+        if (actualPosition == null) {
+            throw new IllegalArgumentException();
         }
 
-        return this.positionOnBoard;
+        if (direction == null) {
+            throw new IllegalArgumentException();
+        }
+
+        if (nSquares < 1) {
+            throw new IllegalArgumentException();
+        }
+
+
+        Position nextPosition = actualPosition;
+        for (var i = 0; i < nSquares; ++i) {
+            nextPosition = nextPosition.next(direction);
+        }
+
+
+        try {
+            board.getSquareType(nextPosition);
+        } catch (NullSquareException | PositionOutOfBoundException e) {
+            return null;
+        }
+
+        for (Animal animal : animals) {
+            if (!animal.isOnStar() && animal.getPositionOnBoard().equals(nextPosition)) {
+                return step(nextPosition, direction, 1, board, animals);
+            }
+        }
+
+        return nextPosition;
     }
 }

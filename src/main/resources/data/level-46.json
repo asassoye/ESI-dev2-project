@@ -2,10 +2,11 @@
   "board": {
     "squares": [
       [
+        null,
+        null,
         {
           "type": "STAR"
         },
-        null,
         null,
         null
       ],
@@ -13,54 +14,71 @@
         {
           "type": "STAR"
         },
-        null,
+        {
+          "type": "STAR"
+        },
+        {
+          "type": "GRASS"
+        },
         null,
         null
       ],
       [
+        null,
         {
-          "type": "GRASS"
+          "type": "GRASS",
+          "eastWall": true
         },
         {
           "type": "GRASS"
         },
+        {
+          "type": "GRASS"
+        },
+        null
+      ],
+      [
         {
           "type": "STAR"
+        },
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
         },
         {
           "type": "GRASS"
         }
-      ],
-      [
-        {
-          "type": "GRASS"
-        },
-        null,
-        null,
-        null
-      ],
-      [
-        {
-          "type": "GRASS"
-        },
-        null,
-        null,
-        null
       ]
     ]
   },
   "animals": [
     {
-      "type": "Snail",
+      "type": "Ladybird",
       "positionOnBoard": {
-        "row": 2,
-        "column": 1
+        "row": 3,
+        "column": 2
       }
     },
     {
-      "type": "Bumblebee",
+      "type": "Ladybird",
       "positionOnBoard": {
-        "row": 2,
+        "row": 3,
         "column": 3
       }
     },
@@ -68,9 +86,16 @@
       "type": "Ladybird",
       "positionOnBoard": {
         "row": 4,
-        "column": 0
+        "column": 3
+      }
+    },
+    {
+      "type": "Ladybird",
+      "positionOnBoard": {
+        "row": 4,
+        "column": 4
       }
     }
   ],
-  "nMoves": 5
+  "nMoves": 10
 }

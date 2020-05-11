@@ -25,35 +25,28 @@ import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
-/**
- * Snail Class
- *
- * @author Andrew SASSOYE
- * @version 2.0.0
- * @since 0.2.0
- */
-public class Snail extends Animal implements Terrestrial {
-    public Snail() {
+public class Ladybird extends Animal implements Terrestrial {
+    public Ladybird() {
         this(new Position());
     }
 
     /**
-     * Snail constructor
+     * Spider constructor
      *
      * @param positionOnBoard initial position on Board
      */
-    public Snail(Position positionOnBoard) {
+    public Ladybird(Position positionOnBoard) {
         super(positionOnBoard);
     }
 
     /**
-     * Snail toString for View
+     * toString of Spider for View
      *
-     * @return " SN "
+     * @return " SP "
      */
     @Override
     public String toString() {
-        return "SNAIL";
+        return "Ladybird";
     }
 
     /**
@@ -61,7 +54,7 @@ public class Snail extends Animal implements Terrestrial {
      */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
-        this.positionOnBoard = step(this.positionOnBoard, direction, 1, board, animals);
+        this.positionOnBoard = step(this.positionOnBoard, direction, 2, board, animals);
 
         if (this.positionOnBoard != null && board.getSquareType(positionOnBoard) == SquareType.STAR) {
             this.onStar = true;

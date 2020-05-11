@@ -78,14 +78,14 @@
       }
     },
     {
-      "type": "Bumbelbee",
+      "type": "Bumblebee",
       "positionOnBoard": {
         "row": 4,
         "column": 2
       }
     },
     {
-      "type": "Bumbelbee",
+      "type": "Bumblebee",
       "positionOnBoard": {
         "row": 4,
         "column": 4

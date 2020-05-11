@@ -38,7 +38,11 @@ import g54327.humbug.model.Structures.Position;
 )
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Snail.class),
-        @JsonSubTypes.Type(value = Spider.class)
+        @JsonSubTypes.Type(value = Spider.class),
+        @JsonSubTypes.Type(value = Grasshopper.class),
+        @JsonSubTypes.Type(value = Bumblebee.class),
+        @JsonSubTypes.Type(value = Ladybird.class),
+        @JsonSubTypes.Type(value = Butterfly.class),
 })
 public abstract class Animal {
 

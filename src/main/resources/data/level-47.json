@@ -2,91 +2,87 @@
   "board": {
     "squares": [
       [
-        null,
-        {
-          "type": "STAR"
-        },
-        {
-          "type": "GRASS"
-        },
-        {
-          "type": "GRASS"
-        },
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        {
-          "type": "STAR"
-        },
-        null,
-        null
-      ],
-      [
-        {
-          "type": "GRASS"
-        },
-        {
-          "type": "GRASS"
-        },
         {
           "type": "GRASS",
-          "northWall": true
+          "westWall": true
         },
         {
-          "type": "STAR"
+          "type": "GRASS"
         },
-        null,
-        null
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        }
       ],
       [
-        null,
-        {
-          "type": "GRASS"
-        },
-        {
-          "type": "GRASS",
-          "southWall": true
-        },
-        {
-          "type": "GRASS"
-        },
         {
           "type": "GRASS"
         },
         {
           "type": "STAR",
           "eastWall": true
+        },
+        {
+          "type": "STAR"
+        },
+        {
+          "type": "GRASS"
         }
       ],
       [
-        null,
         {
           "type": "GRASS"
         },
-        null,
-        null,
-        null,
-        null
+        {
+          "type": "STAR",
+          "eastWall": true
+        },
+        {
+          "type": "STAR"
+        },
+        {
+          "type": "GRASS"
+        }
+      ],
+      [
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS"
+        },
+        {
+          "type": "GRASS",
+          "eastWall": true
+        }
       ]
     ]
   },
   "animals": [
     {
-      "type": "Ladybird",
+      "type": "Spider",
       "positionOnBoard": {
-        "row": 2,
+        "row": 0,
         "column": 0
       }
     },
     {
-      "type": "Bumblebee",
+      "type": "Spider",
       "positionOnBoard": {
-        "row": 2,
-        "column": 2
+        "row": 0,
+        "column": 3
+      }
+    },
+    {
+      "type": "Spider",
+      "positionOnBoard": {
+        "row": 3,
+        "column": 0
       }
     },
     {
@@ -95,14 +91,7 @@
         "row": 3,
         "column": 3
       }
-    },
-    {
-      "type": "Spider",
-      "positionOnBoard": {
-        "row": 4,
-        "column": 1
-      }
     }
   ],
-  "nMoves": 12
+  "nMoves": 10
 }

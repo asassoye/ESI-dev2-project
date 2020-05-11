@@ -73,14 +73,14 @@
   },
   "animals": [
     {
-      "type": "Bumbelbee",
+      "type": "Bumblebee",
       "positionOnBoard": {
         "row": 0,
         "column": 0
       }
     },
     {
-      "type": "Bumbelbee",
+      "type": "Bumblebee",
       "positionOnBoard": {
         "row": 2,
         "column": 0

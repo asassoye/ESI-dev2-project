@@ -19,46 +19,18 @@
 
 package g54327.humbug.model.Animals;
 
-import g54327.humbug.model.Animals.Type.Terrestrial;
+import g54327.humbug.model.Animals.Type.Aerial;
 import g54327.humbug.model.Squares.SquareType;
 import g54327.humbug.model.Structures.Board;
 import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
-/**
- * Snail Class
- *
- * @author Andrew SASSOYE
- * @version 2.0.0
- * @since 0.2.0
- */
-public class Snail extends Animal implements Terrestrial {
-    public Snail() {
-        this(new Position());
-    }
-
-    /**
-     * Snail constructor
-     *
-     * @param positionOnBoard initial position on Board
-     */
-    public Snail(Position positionOnBoard) {
-        super(positionOnBoard);
-    }
-
-    /**
-     * Snail toString for View
-     *
-     * @return " SN "
-     */
+public class Grasshopper extends Animal implements Aerial {
     @Override
     public String toString() {
-        return "SNAIL";
+        return "Grasshopper";
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public Position move(Board board, Direction direction, Animal[] animals) {
         this.positionOnBoard = step(this.positionOnBoard, direction, 1, board, animals);
