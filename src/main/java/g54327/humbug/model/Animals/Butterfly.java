@@ -26,6 +26,14 @@ import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
 public class Butterfly extends Animal implements Aerial {
+    public Butterfly() {
+        super();
+    }
+
+    public Butterfly(Position positionOnBoard) {
+        super(positionOnBoard);
+    }
+
     @Override
     public String toString() {
         return "Butterfly";

@@ -26,6 +26,14 @@ import g54327.humbug.model.Structures.Direction;
 import g54327.humbug.model.Structures.Position;
 
 public class Grasshopper extends Animal implements Aerial {
+    public Grasshopper() {
+        super();
+    }
+
+    public Grasshopper(Position positionOnBoard) {
+        super(positionOnBoard);
+    }
+
     @Override
     public String toString() {
         return "Grasshopper";
