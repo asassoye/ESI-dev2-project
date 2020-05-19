@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.diogonunes</groupId>
             <artifactId>JCDP</artifactId>
-            <version>4.0.1</version>
+            <version>4.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
